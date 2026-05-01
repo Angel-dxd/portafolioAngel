@@ -1,0 +1,332 @@
+/* =========================================
+   NIVEL 1: Cimientos y Estética Global
+   ========================================= */
+:root {
+    --bg-dark: #0a0a0a;
+    --text-main: #a1a1aa;
+    --text-white: #ffffff;
+    --accent: #3b82f6;
+    --border: rgba(255, 255, 255, 0.1);
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.text-white { 
+    color: var(--text-white); 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+/* =========================================
+   NIVEL 2: Estructura y Navegación
+   ========================================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 10%;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+/* Status Indicator (Punto Verde) */
+.status-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #23a559; /* Verde estilo Discord */
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse-green 2s infinite;
+}
+
+main {
+    padding: 0 10%;
+}
+
+section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+/* =========================================
+   NIVEL 3: Componentes y Tipografía Avanzada
+   ========================================= */
+.home-text {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+.home-text p {
+    max-width: 600px;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.about-text {
+    font-size: 1.5rem;
+    color: var(--text-white);
+}
+
+.about-text em {
+    color: var(--accent);
+    font-style: normal;
+}
+
+.about-detail {
+    font-size: 1.1rem;
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    background: rgba(12, 15, 207, 0.05);
+    transition: 0.3s ease;
+}
+
+.tech-badge:hover {
+    border-color: var(--accent);
+    color: var(--text-white);
+    transform: translateY(-2px);
+}
+
+.project-content {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.slider {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.slide {
+    min-width: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--border);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.slider-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: var(--accent);
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.project-link:hover {
+    color: var(--text-white);
+}
+
+footer {
+    padding: 4rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+}
+
+.footer-right {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    nav ul {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   NIVEL 4: Animaciones y Dinamismo
+   ========================================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación del Punto Verde */
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(35, 165, 89, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(35, 165, 89, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(35, 165, 89, 0);
+    }
+}
+
+/* Aplicando la animación de entrada a los elementos principales */
+.home-text h1, 
+.home-text p, 
+.home-text .tag,
+.about-content {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.home-text .tag { animation-delay: 0.1s; }
+.home-text h1 { animation-delay: 0.3s; }
+.home-text p { animation-delay: 0.5s; }
+.home-text a { 
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.7s; 
+    opacity: 0;
+}

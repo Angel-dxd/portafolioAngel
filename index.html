@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Angel Xavier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <span class="text-white">Angel Xavier</span>
+            <ul>
+                <li><a href="#perfil">Sobre mi</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="status-container">
+                <span class="status-dot"></span>
+                <span class="text-white">Disponible</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <div class="home-text">
+                <span class="tag">Full stack developer // Valencia, 2026</span>
+                <h1>Hola,
+                    <br>
+                    <span class="text-white">soy Angel Xavier</span>
+                </h1>
+                <p class="text-white">Soy un apasionado por la tecnología y el desarrollo de software. Me gusta crear
+                    soluciones innovadoras y eficientes. Me gusta aprender nuevas tecnologías y aplicarlas en mis proyectos. Siempre estoy buscando mejorar mis habilidades y conocimientos.
+                </p>
+                <a href="#proyectos">Proyectos</a>
+            </div>
+        </section>
+
+        <section id="perfil">
+            <span class="text-white">01/ Perfil</span>
+            <div class="about-content">
+                <div class="about-text">
+                    Me especializo en transformar <em>lógica compleja</em> en sistemas eficientes. Mi enfoque combina la robustez del backend con la <em>limpieza del diseño moderno</em>.
+                </div>
+                <p class="about-detail">
+                    Desde Valencia, España, he dedicado los últimos años a desarrollar arquitecturas de software escalables y centradas en el usuario. Mi enfoque se basa en la resolución de problemas complejos mediante soluciones simples y eficientes.
+                </p>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <span class="text-white">02/ Proyectos</span>
+            <div class="project-content">
+                <div class="project-info">
+                    <div class="about-text">
+                        <em>Boutique Market ERP</em>.
+                        <br>
+                        <p>Sistema de gestión de inventarios y servicios con aislamiento total de datos para múltiples
+                        clientes comerciales. Arquitectura multitenant robusta y segura.
+                        </p>
+                        <span class="tech-badge">Javascript</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">BCrypt</span>
+                        <span class="tech-badge">Tailwind CSS</span>
+                    </div>
+                    <a href="https://github.com/Angel-dxd/boutique-market" target="_blank" class="project-link">Ver en Github →</a>
+                </div>
+                <div class="slider">
+                    <div class="slider-track">
+                        <img src="img/boutique-login.jpeg" alt="Login - Sistema de Gestión Integral" class="slide">
+                        <img src="img/boutique-dashboard.jpeg" alt="Dashboard Oh-Nails" class="slide">
+                        <img src="img/boutique-market.jpeg" alt="Market Dashboard El Gallo Azul" class="slide">
+                    </div>
+                    <button class="slider-btn prev" onclick="moveSlide(-1)">&#8249;</button>
+                    <button class="slider-btn next" onclick="moveSlide(1)">&#8250;</button>
+                    <div class="slider-dots">
+                        <span class="dot active" onclick="goToSlide(0)"></span>
+                        <span class="dot" onclick="goToSlide(1)"></span>
+                        <span class="dot" onclick="goToSlide(2)"></span>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="stack">
+            <span class="text-white">03/ Tech stack</span>
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="tech-badge">Javascript</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">BCrypt</span>
+                    <span class="tech-badge">Tailwind CSS</span>
+                    <span class="tech-badge">Unity</span>
+                    <span class="tech-badge">Android Studio</span>
+                    <span class="tech-badge">Github</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">GitLab</span>
+                    <span class="tech-badge">PHP</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <p class="footer-left">Angel Xavier Pons Márquez © 2026</p>
+        <div class="footer-right">
+            <a href="https://github.com/Angel-dxd" target="_blank">Github</a>
+            <a href="https://www.linkedin.com/in/angel-xavier-pons-márquez-123456/" target="_blank">LinkedIn</a>
+            <a href="mailto:angelxavierponsmarquez@gmail.com">Email</a>
+        </div>
+    </footer>
+
+<script>
+    let currentSlide = 0;
+    const total = document.querySelectorAll('.slide').length;
+
+    function updateSlider() {
+        document.querySelector('.slider-track').style.transform = `translateX(-${currentSlide * 100}%)`;
+        document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    }
+
+    function moveSlide(dir) {
+        currentSlide = (currentSlide + dir + total) % total;
+        updateSlider();
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+    }
+</script>
+</body>
+
+</html>
