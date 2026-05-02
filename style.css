@@ -96,19 +96,28 @@ a {
 
 /* Avatar */
 .avatar {
-    width: 72px;
-    height: 72px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #1e3a5f, #3b82f6);
     border: 2px solid rgba(59, 130, 246, 0.4);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 24px rgba(59, 130, 246, 0.2);
+    overflow: hidden;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.4rem;
     font-weight: 700;
-    color: white;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 0 24px rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+}
+.avatar img {
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    object-position: center 8%;
+    margin-left: -25%;
+    margin-top: -5%;
 }
 
 /* Typing cursor */
