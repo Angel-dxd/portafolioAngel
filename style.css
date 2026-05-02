@@ -278,7 +278,15 @@ section {
 h1 {
     font-size: clamp(3rem, 8vw, 5rem);
     line-height: 1.1;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-role {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .home-text p {
@@ -461,6 +469,11 @@ h1 {
     color: var(--text-main);
 }
 
+.timeline-subtitle {
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
 .about-text {
     font-size: 1.5rem;
     color: var(--text-white);
@@ -493,12 +506,9 @@ h1 {
     line-height: 1;
 }
 
-.si-icon {
-    width: 1rem;
-    height: 1rem;
-    object-fit: contain;
+iconify-icon {
     flex-shrink: 0;
-    filter: brightness(0) invert(1);
+    vertical-align: middle;
 }
 
 .badge-svg {
@@ -616,9 +626,18 @@ h1 {
 
 .project-card-header {
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    justify-content: space-between;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project-title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .project-company {

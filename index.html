@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Angel Xavier</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 
 <body>
@@ -36,12 +36,9 @@
         <section id="inicio">
             <div class="home-text">
                 <div class="avatar"><span>AX</span></div>
-                <span class="tag">Full stack developer // Valencia, 2026</span>
-                <h1><span data-i18n="hero-greeting">Hola,</span>
-                    <br>
-                    <span class="text-white typing-target"></span><span class="typing-cursor">|</span>
-                </h1>
-                <p class="text-white" data-i18n="hero-desc">Desarrollador con especialización en backend y ojo para el frontend. Me obsesiona resolver problemas complejos — cuanto más difícil, mejor. Con base en Contabilidad y Finanzas, construyo software que no solo funciona, sino que tiene sentido de negocio.
+                <h1 class="hero-name">Angel Xavier</h1>
+                <p class="hero-role"><span class="typing-target"></span><span class="typing-cursor">|</span></p>
+                <p class="text-white hero-desc" data-i18n="hero-desc">Desarrollador especializado en backend con dominio del stack completo. Construyo sistemas robustos y escalables — desde la arquitectura hasta la interfaz. Con base en Contabilidad y Finanzas, el software que desarrollo tiene tanto calidad técnica como sentido de negocio.
                 </p>
                 <div class="hero-actions">
                     <a href="#proyectos" data-i18n="hero-projects-btn">Proyectos</a>
@@ -54,16 +51,69 @@
             <span class="text-white" data-i18n="section-profile">01/ Perfil</span>
             <div class="about-content">
                 <div class="about-text" data-i18n-html="about-text">
-                    <em>Backend</em> por especialización, <em>fullstack</em> por convicción. El tiempo no pasa cuando estoy resolviendo un problema difícil — es donde más disfruto.
+                    Especializado en <em>backend</em>, con dominio del <em>stack completo</em>. Construyo sistemas robustos y escalables — desde la arquitectura hasta la interfaz.
                 </div>
                 <p class="about-detail" data-i18n="about-detail">
-                    Me mantengo en constante aprendizaje por cuenta propia y procuro dominar las herramientas antes de que sean tendencia. Vengo de un Grado Superior en Contabilidad y Finanzas, lo que me da una visión de negocio que aplico directamente al software que construyo.
+                    Aprendizaje autodidacta constante y obsesión por dominar las herramientas antes de que sean tendencia. Mi formación en Contabilidad y Finanzas me da una perspectiva de negocio que aplico directamente en el software que construyo — porque un buen sistema no solo funciona, también tiene sentido económico.
                 </p>
             </div>
         </section>
 
+        <section id="stack">
+            <span class="text-white">02/ Tech Stack</span>
+            <div class="stack-grid">
+                <div class="stack-category">
+                    <span class="stack-cat-title">Frontend</span>
+                    <div class="stack-badges">
+                        <span class="tech-badge"><iconify-icon icon="logos:html-5" width="16" height="16"></iconify-icon> HTML</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:css-3" width="16" height="16"></iconify-icon> CSS</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:tailwindcss-icon" width="16" height="16"></iconify-icon> Tailwind</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:bootstrap" width="16" height="16"></iconify-icon> Bootstrap</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:vitejs" width="16" height="16"></iconify-icon> Vite</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:typescript-icon" width="16" height="16"></iconify-icon> TypeScript</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:javascript" width="16" height="16"></iconify-icon> JavaScript</span>
+                    </div>
+                </div>
+                <div class="stack-category">
+                    <span class="stack-cat-title">Backend</span>
+                    <div class="stack-badges">
+                        <span class="tech-badge"><iconify-icon icon="logos:nodejs-icon" width="16" height="16"></iconify-icon> Node.js</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:php" width="16" height="16"></iconify-icon> PHP</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:nginx" width="16" height="16"></iconify-icon> Nginx</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:docker-icon" width="16" height="16"></iconify-icon> Docker</span>
+                        <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> BCrypt</span>
+                    </div>
+                </div>
+                <div class="stack-category">
+                    <span class="stack-cat-title">Databases</span>
+                    <div class="stack-badges">
+                        <span class="tech-badge"><iconify-icon icon="logos:mysql" width="16" height="16"></iconify-icon> MySQL</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:mongodb-icon" width="16" height="16"></iconify-icon> MongoDB</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:postgresql" width="16" height="16"></iconify-icon> PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="stack-category">
+                    <span class="stack-cat-title">Others</span>
+                    <div class="stack-badges">
+                        <span class="tech-badge"><iconify-icon icon="logos:git-icon" width="16" height="16"></iconify-icon> Git</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:github-icon" width="16" height="16"></iconify-icon> GitHub</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:gitlab" width="16" height="16"></iconify-icon> GitLab</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:visual-studio-code" width="16" height="16"></iconify-icon> VSCode</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:debian" width="16" height="16"></iconify-icon> Debian</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:ubuntu" width="16" height="16"></iconify-icon> Ubuntu</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:unity" width="16" height="16"></iconify-icon> Unity</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:android-studio" width="16" height="16"></iconify-icon> Android Studio</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:kubernetes" width="16" height="16"></iconify-icon> Kubernetes</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:anthropic" width="16" height="16"></iconify-icon> Claude Code</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:openai-icon" width="16" height="16"></iconify-icon> Codex</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:python" width="16" height="16"></iconify-icon> Antigravity</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="proyectos">
-            <span class="text-white" data-i18n="section-projects">02/ Proyectos</span>
+            <span class="text-white" data-i18n="section-projects">03/ Proyectos</span>
             <div class="project-content">
                 <div class="project-info">
                     <div class="about-text">
@@ -72,11 +122,11 @@
                         <p data-i18n="boutique-desc">Sistema de gestión de inventarios y servicios con aislamiento total de datos para múltiples
                         clientes comerciales. Arquitectura multitenant robusta y segura.
                         </p>
-                        <span class="tech-badge"><i class="devicon-javascript-original colored"></i> JavaScript</span>
-                        <span class="tech-badge"><i class="devicon-nodejs-original colored"></i> Node.js</span>
-                        <span class="tech-badge"><i class="devicon-mysql-original colored"></i> MySQL</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:javascript" width="16" height="16"></iconify-icon> JavaScript</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:nodejs-icon" width="16" height="16"></iconify-icon> Node.js</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:mysql" width="16" height="16"></iconify-icon> MySQL</span>
                         <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> BCrypt</span>
-                        <span class="tech-badge"><i class="devicon-tailwindcss-plain colored"></i> Tailwind</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:tailwindcss-icon" width="16" height="16"></iconify-icon> Tailwind</span>
                     </div>
                     <a href="https://github.com/Angel-dxd/boutique-market" target="_blank" class="project-link" data-i18n="boutique-link">Ver en Github →</a>
                 </div>
@@ -98,8 +148,11 @@
             </div>
             <div class="project-card">
                 <div class="project-card-header">
-                    <span class="about-text"><em>Contract Manager</em></span>
-                    <span class="project-company">Onna Digital <span class="tag-badge" data-i18n="contract-badge">Prácticas</span></span>
+                    <div class="project-title-group">
+                        <span class="about-text"><em>Contract Manager</em></span>
+                        <span class="project-company">Onna Digital</span>
+                    </div>
+                    <span class="tag-badge" data-i18n="contract-badge">Prácticas</span>
                 </div>
                 <div class="project-card-body">
                     <div class="project-card-desc">
@@ -122,13 +175,13 @@
                         </div>
                     </div>
                     <div class="project-card-stack">
-                        <span class="tech-badge"><i class="devicon-typescript-original colored"></i> TypeScript</span>
-                        <span class="tech-badge"><i class="devicon-tailwindcss-plain colored"></i> Tailwind</span>
-                        <span class="tech-badge"><i class="devicon-docker-original colored"></i> Docker</span>
-                        <span class="tech-badge"><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
-                        <span class="tech-badge"><i class="devicon-gitlab-original colored"></i> GitLab</span>
-                        <span class="tech-badge"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/dolibarr.svg" class="si-icon" alt="Dolibarr"> Dolibarr API</span>
-                        <span class="tech-badge"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/helm.svg" class="si-icon" alt="Helm"> Helm</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:typescript-icon" width="16" height="16"></iconify-icon> TypeScript</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:tailwindcss-icon" width="16" height="16"></iconify-icon> Tailwind</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:docker-icon" width="16" height="16"></iconify-icon> Docker</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:kubernetes" width="16" height="16"></iconify-icon> Kubernetes</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:gitlab" width="16" height="16"></iconify-icon> GitLab</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:dolibarr" width="16" height="16"></iconify-icon> Dolibarr API</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:helm" width="16" height="16"></iconify-icon> Helm</span>
                         <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> FreeLens</span>
                     </div>
                 </div>
@@ -167,60 +220,8 @@
                     <div class="timeline-content">
                         <span class="timeline-type practicas" data-i18n="exp-type">Prácticas</span>
                         <span class="timeline-title">Onna Digital</span>
+                        <span class="timeline-subtitle" data-i18n="exp-2-role">Desarrollador Fullstack — Contract Manager</span>
                         <span class="timeline-date" data-i18n="exp-2-date">Noviembre 2025 — Marzo 2026</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="stack">
-            <span class="text-white">03/ Tech stack</span>
-            <div class="stack-grid">
-                <div class="stack-category">
-                    <span class="stack-cat-title">Frontend</span>
-                    <div class="stack-badges">
-                        <span class="tech-badge"><i class="devicon-html5-original colored"></i> HTML</span>
-                        <span class="tech-badge"><i class="devicon-css3-original colored"></i> CSS</span>
-                        <span class="tech-badge"><i class="devicon-tailwindcss-plain colored"></i> Tailwind</span>
-                        <span class="tech-badge"><i class="devicon-bootstrap-original colored"></i> Bootstrap</span>
-                        <span class="tech-badge"><i class="devicon-vitejs-original colored"></i> Vite</span>
-                        <span class="tech-badge"><i class="devicon-typescript-original colored"></i> TypeScript</span>
-                        <span class="tech-badge"><i class="devicon-javascript-original colored"></i> JavaScript</span>
-                    </div>
-                </div>
-                <div class="stack-category">
-                    <span class="stack-cat-title">Backend</span>
-                    <div class="stack-badges">
-                        <span class="tech-badge"><i class="devicon-nodejs-original colored"></i> Node.js</span>
-                        <span class="tech-badge"><i class="devicon-php-original colored"></i> PHP</span>
-                        <span class="tech-badge"><i class="devicon-nginx-original colored"></i> Nginx</span>
-                        <span class="tech-badge"><i class="devicon-docker-original colored"></i> Docker</span>
-                        <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> BCrypt</span>
-                    </div>
-                </div>
-                <div class="stack-category">
-                    <span class="stack-cat-title">Databases</span>
-                    <div class="stack-badges">
-                        <span class="tech-badge"><i class="devicon-mysql-original colored"></i> MySQL</span>
-                        <span class="tech-badge"><i class="devicon-mongodb-original colored"></i> MongoDB</span>
-                        <span class="tech-badge"><i class="devicon-postgresql-original colored"></i> PostgreSQL</span>
-                    </div>
-                </div>
-                <div class="stack-category">
-                    <span class="stack-cat-title">Others</span>
-                    <div class="stack-badges">
-                        <span class="tech-badge"><i class="devicon-git-original colored"></i> Git</span>
-                        <span class="tech-badge"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" class="si-icon" alt="GitHub"> GitHub</span>
-                        <span class="tech-badge"><i class="devicon-gitlab-original colored"></i> GitLab</span>
-                        <span class="tech-badge"><i class="devicon-vscode-original colored"></i> VSCode</span>
-                        <span class="tech-badge"><i class="devicon-debian-original colored"></i> Debian</span>
-                        <span class="tech-badge"><i class="devicon-ubuntu-original colored"></i> Ubuntu</span>
-                        <span class="tech-badge"><i class="devicon-unity-original colored"></i> Unity</span>
-                        <span class="tech-badge"><i class="devicon-androidstudio-plain colored"></i> Android Studio</span>
-                        <span class="tech-badge"><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
-                        <span class="tech-badge"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/anthropic.svg" class="si-icon" alt="Anthropic"> Claude Code</span>
-                        <span class="tech-badge"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg" class="si-icon" alt="OpenAI"> Codex</span>
-                        <span class="tech-badge"><i class="devicon-python-original colored"></i> Antigravity</span>
                     </div>
                 </div>
             </div>
@@ -315,13 +316,13 @@
         es: {
             'nav-about': 'Sobre mi', 'nav-projects': 'Proyectos', 'nav-education': 'Formación',
             'nav-contact': 'Contacto', 'nav-status': 'Disponible',
-            'hero-greeting': 'Hola,', 'hero-name': 'soy Angel Xavier',
-            'hero-desc': 'Desarrollador con especialización en backend y ojo para el frontend. Me obsesiona resolver problemas complejos — cuanto más difícil, mejor. Con base en Contabilidad y Finanzas, construyo software que no solo funciona, sino que tiene sentido de negocio.',
+            'hero-desc': 'Desarrollador especializado en backend con dominio del stack completo. Construyo sistemas robustos y escalables — desde la arquitectura hasta la interfaz. Con base en Contabilidad y Finanzas, el software que desarrollo tiene tanto calidad técnica como sentido de negocio.',
             'hero-projects-btn': 'Proyectos', 'hero-cv-btn': 'Descargar CV',
             'section-profile': '01/ Perfil',
-            'about-text': '<em>Backend</em> por especialización, <em>fullstack</em> por convicción. El tiempo no pasa cuando estoy resolviendo un problema difícil — es donde más disfruto.',
-            'about-detail': 'Me mantengo en constante aprendizaje por cuenta propia y procuro dominar las herramientas antes de que sean tendencia. Vengo de un Grado Superior en Contabilidad y Finanzas, lo que me da una visión de negocio que aplico directamente al software que construyo.',
-            'section-projects': '02/ Proyectos',
+            'about-text': 'Especializado en <em>backend</em>, con dominio del <em>stack completo</em>. Construyo sistemas robustos y escalables — desde la arquitectura hasta la interfaz.',
+            'about-detail': 'Aprendizaje autodidacta constante y obsesión por dominar las herramientas antes de que sean tendencia. Mi formación en Contabilidad y Finanzas me da una perspectiva de negocio que aplico directamente en el software que construyo — porque un buen sistema no solo funciona, también tiene sentido económico.',
+            'exp-2-role': 'Desarrollador Fullstack — Contract Manager',
+            'section-projects': '03/ Proyectos',
             'boutique-desc': 'Sistema de gestión de inventarios y servicios con aislamiento total de datos para múltiples clientes comerciales. Arquitectura multitenant robusta y segura.',
             'boutique-link': 'Ver en Github →',
             'contract-badge': 'Prácticas',
@@ -340,13 +341,13 @@
         en: {
             'nav-about': 'About me', 'nav-projects': 'Projects', 'nav-education': 'Education',
             'nav-contact': 'Contact', 'nav-status': 'Available',
-            'hero-greeting': 'Hello,', 'hero-name': "I'm Angel Xavier",
-            'hero-desc': "Developer specializing in backend with a good eye for frontend. I'm obsessed with solving complex problems — the harder, the better. With a background in Accounting & Finance, I build software that not only works, but makes business sense.",
+            'hero-desc': "Backend-specialized developer with full-stack command. I build robust and scalable systems — from architecture to interface. With a background in Accounting & Finance, the software I develop has both technical quality and business sense.",
             'hero-projects-btn': 'Projects', 'hero-cv-btn': 'Download CV',
             'section-profile': '01/ Profile',
-            'about-text': '<em>Backend</em> by specialization, <em>fullstack</em> by conviction. Time flies when I\'m solving a hard problem — that\'s where I thrive.',
-            'about-detail': 'I keep learning on my own and strive to master tools before they become mainstream. I come from a Higher Degree in Accounting & Finance, which gives me a business perspective I apply directly to the software I build.',
-            'section-projects': '02/ Projects',
+            'about-text': 'Specialized in <em>backend</em>, with command of the <em>full stack</em>. I build robust and scalable systems — from architecture to interface.',
+            'about-detail': 'Constant self-driven learning and an obsession with mastering tools before they become mainstream. My background in Accounting & Finance gives me a business perspective I apply directly to the software I build — because a good system not only works, it makes economic sense.',
+            'exp-2-role': 'Fullstack Developer — Contract Manager',
+            'section-projects': '03/ Projects',
             'boutique-desc': 'Inventory and service management system with full data isolation for multiple commercial clients. Robust and secure multitenant architecture.',
             'boutique-link': 'View on Github →',
             'contract-badge': 'Internship',
@@ -379,7 +380,7 @@
             const key = el.getAttribute('data-i18n-html');
             if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
         });
-        typingEl.textContent = i18n[lang]['hero-name'];
+        typingEl.textContent = typingTexts[lang];
         document.documentElement.lang = lang;
     }
 
@@ -387,7 +388,7 @@
 
     // Efecto typing
     const typingEl = document.querySelector('.typing-target');
-    const typingTexts = { es: 'soy Angel Xavier', en: "I'm Angel Xavier" };
+    const typingTexts = { es: 'Desarrollador Fullstack', en: 'Fullstack Developer' };
     let ti = 0;
     setTimeout(function type() {
         const text = typingTexts[currentLang];
