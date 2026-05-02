@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <button class="back-to-top" aria-label="Volver arriba">↑</button>
     <header>
         <nav>
             <span class="text-white">Angel Xavier</span>
@@ -29,10 +32,11 @@
     <main>
         <section id="inicio">
             <div class="home-text">
+                <div class="avatar"><span>AX</span></div>
                 <span class="tag">Full stack developer // Valencia, 2026</span>
                 <h1>Hola,
                     <br>
-                    <span class="text-white">soy Angel Xavier</span>
+                    <span class="text-white typing-target"></span><span class="typing-cursor">|</span>
                 </h1>
                 <p class="text-white">Desarrollador con especialización en backend y ojo para el frontend. Me obsesiona resolver problemas complejos — cuanto más difícil, mejor. Con base en Contabilidad y Finanzas, construyo software que no solo funciona, sino que tiene sentido de negocio.
                 </p>
@@ -247,6 +251,90 @@
         currentSlide = index;
         updateSlider();
     }
+
+    // Cursor personalizado
+    const dot  = document.querySelector('.cursor-dot');
+    const ring = document.querySelector('.cursor-ring');
+    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', e => {
+        mouseX = e.clientX; mouseY = e.clientY;
+        dot.style.left = mouseX + 'px';
+        dot.style.top  = mouseY + 'px';
+    });
+
+    (function animateRing() {
+        ringX += (mouseX - ringX) * 0.12;
+        ringY += (mouseY - ringY) * 0.12;
+        ring.style.left = ringX + 'px';
+        ring.style.top  = ringY + 'px';
+        requestAnimationFrame(animateRing);
+    })();
+
+    document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('ring-hover'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('ring-hover'));
+    });
+
+    // Navbar activa
+    const sections  = document.querySelectorAll('section[id]');
+    const navLinks  = document.querySelectorAll('nav ul li a');
+
+    new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                const link = document.querySelector(`nav ul li a[href="#${e.target.id}"]`);
+                if (link) link.classList.add('active');
+            }
+        });
+    }, { rootMargin: '-40% 0px -50% 0px' }).observe && sections.forEach(s =>
+        new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    const link = document.querySelector(`nav ul li a[href="#${e.target.id}"]`);
+                    if (link) link.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-40% 0px -50% 0px' }).observe(s)
+    );
+
+    // Botón volver arriba
+    const backBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        backBtn.classList.toggle('visible', window.scrollY > 300);
+    });
+    backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Efecto typing
+    const typingEl = document.querySelector('.typing-target');
+    const fullText = 'soy Angel Xavier';
+    let ti = 0;
+    setTimeout(function type() {
+        if (ti <= fullText.length) {
+            typingEl.textContent = fullText.slice(0, ti);
+            ti++;
+            setTimeout(type, 80);
+        }
+    }, 800);
+
+    // Fade-in on scroll
+    document.querySelectorAll('section > *, .project-content, .project-card, .timeline, .stack-grid').forEach((el, i) => {
+        el.classList.add('fade-in');
+        el.style.transitionDelay = `${(i % 4) * 0.1}s`;
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                observer.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
 
