@@ -718,6 +718,36 @@ footer {
 }
 
 /* Responsive */
+/* Timeline stack icons */
+.timeline-stack {
+    display: flex;
+    gap: 6px;
+    margin-top: 4px;
+    align-items: center;
+}
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-white);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 @media (max-width: 768px) {
     .about-content {
         grid-template-columns: 1fr;
@@ -741,9 +771,32 @@ footer {
     .stack-grid {
         grid-template-columns: 1fr;
     }
-    
+
+    .hamburger {
+        display: flex;
+    }
+
     nav ul {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(12, 30, 53, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1.2rem;
+        border-bottom: 1px solid var(--border);
+        z-index: 100;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav {
+        position: relative;
     }
 
     footer {

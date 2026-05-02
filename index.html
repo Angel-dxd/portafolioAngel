@@ -4,7 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Angel Xavier</title>
+    <title>Angel Xavier — Desarrollador Fullstack</title>
+    <meta name="description" content="Portafolio de Angel Xavier Pons Márquez, desarrollador fullstack especializado en backend. Node.js, TypeScript, Docker, Kubernetes. Valencia, 2026.">
+    <meta name="keywords" content="desarrollador fullstack, backend developer, Node.js, TypeScript, Docker, Kubernetes, Valencia, DAM">
+    <meta name="author" content="Angel Xavier Pons Márquez">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://angel-dxd.github.io/portafolioAngel/">
+    <meta property="og:title" content="Angel Xavier — Desarrollador Fullstack">
+    <meta property="og:description" content="Desarrollador especializado en backend con dominio del stack completo. Proyectos reales, arquitectura sólida y visión de negocio.">
+    <meta property="og:image" content="https://angel-dxd.github.io/portafolioAngel/img/boutique-dashboard.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Angel Xavier — Desarrollador Fullstack">
+    <meta name="twitter:description" content="Desarrollador especializado en backend con dominio del stack completo.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
@@ -16,13 +28,16 @@
     <header>
         <nav>
             <span class="text-white">Angel Xavier</span>
-            <ul>
-                <li><a href="#perfil" data-i18n="nav-about">Sobre mi</a></li>
-                <li><a href="#proyectos" data-i18n="nav-projects">Proyectos</a></li>
-                <li><a href="#formacion" data-i18n="nav-education">Formación</a></li>
-                <li><a href="#contacto" data-i18n="nav-contact">Contacto</a></li>
+            <ul id="nav-menu">
+                <li><a href="#perfil" data-i18n="nav-about" onclick="closeMenu()">Sobre mi</a></li>
+                <li><a href="#proyectos" data-i18n="nav-projects" onclick="closeMenu()">Proyectos</a></li>
+                <li><a href="#formacion" data-i18n="nav-education" onclick="closeMenu()">Formación</a></li>
+                <li><a href="#contacto" data-i18n="nav-contact" onclick="closeMenu()">Contacto</a></li>
             </ul>
             <div class="nav-right">
+                <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
                 <button class="lang-toggle" onclick="toggleLang()">EN</button>
                 <div class="status-container">
                     <span class="status-dot"></span>
@@ -96,7 +111,7 @@
                     <span class="stack-cat-title">Others</span>
                     <div class="stack-badges">
                         <span class="tech-badge"><iconify-icon icon="logos:git-icon" width="16" height="16"></iconify-icon> Git</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:github-icon" width="16" height="16"></iconify-icon> GitHub</span>
+                        <span class="tech-badge"><iconify-icon icon="simple-icons:github" width="16" height="16" style="color:#fff"></iconify-icon> GitHub</span>
                         <span class="tech-badge"><iconify-icon icon="logos:gitlab" width="16" height="16"></iconify-icon> GitLab</span>
                         <span class="tech-badge"><iconify-icon icon="logos:visual-studio-code" width="16" height="16"></iconify-icon> VSCode</span>
                         <span class="tech-badge"><iconify-icon icon="logos:debian" width="16" height="16"></iconify-icon> Debian</span>
@@ -212,7 +227,14 @@
                     <div class="timeline-content">
                         <span class="timeline-type practicas" data-i18n="exp-type">Prácticas</span>
                         <span class="timeline-title">La Fábrica de los Hobbies</span>
+                        <span class="timeline-subtitle" data-i18n="exp-1-role">Desarrollador Web — Gestión de inventario</span>
                         <span class="timeline-date" data-i18n="exp-1-date">Febrero — Mayo 2025</span>
+                        <div class="timeline-stack">
+                            <iconify-icon icon="logos:php" width="14" height="14"></iconify-icon>
+                            <iconify-icon icon="logos:javascript" width="14" height="14"></iconify-icon>
+                            <iconify-icon icon="logos:figma" width="14" height="14"></iconify-icon>
+                            <iconify-icon icon="logos:xampp" width="14" height="14"></iconify-icon>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -336,6 +358,7 @@
             'edu-type': 'Formación', 'exp-type': 'Prácticas',
             'edu-1-title': 'Grado Superior — Contabilidad y Finanzas',
             'edu-2-title': 'Desarrollo de Aplicaciones Multiplataforma (DAM)',
+            'exp-1-role': 'Desarrollador Web — Gestión de inventario',
             'exp-1-date': 'Febrero — Mayo 2025', 'exp-2-date': 'Noviembre 2025 — Marzo 2026',
         },
         en: {
@@ -361,6 +384,7 @@
             'edu-type': 'Education', 'exp-type': 'Internship',
             'edu-1-title': 'Higher Degree — Accounting & Finance',
             'edu-2-title': 'Multiplatform Application Development (DAM)',
+            'exp-1-role': 'Web Developer — Inventory management',
             'exp-1-date': 'February — May 2025', 'exp-2-date': 'November 2025 — March 2026',
         }
     };
@@ -415,6 +439,16 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Hamburger menu
+    function toggleMenu() {
+        document.getElementById('nav-menu').classList.toggle('open');
+        document.querySelector('.hamburger').classList.toggle('active');
+    }
+    function closeMenu() {
+        document.getElementById('nav-menu').classList.remove('open');
+        document.querySelector('.hamburger').classList.remove('active');
+    }
 </script>
 </body>
 
