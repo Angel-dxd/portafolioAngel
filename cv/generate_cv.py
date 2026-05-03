@@ -18,7 +18,7 @@ from PIL import Image as PILImage
 # ── Paths ──────────────────────────────────────────────────────────────────
 OUT_ES   = "/Users/angelxavier/portafolioAngel/cv/cv_es.pdf"
 OUT_EN   = "/Users/angelxavier/portafolioAngel/cv/cv_en.pdf"
-PHOTO    = "/Users/angelxavier/portafolioAngel/img/foto.png"
+PHOTO    = "/Users/angelxavier/portafolioAngel/img/foto_clean.png"
 FONT_VAR = "/tmp/inter_fonts/InterVariable.ttf"
 
 # ── Fonts ──────────────────────────────────────────────────────────────────
