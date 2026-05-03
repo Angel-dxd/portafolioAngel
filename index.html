@@ -57,7 +57,7 @@
                 </p>
                 <div class="hero-actions">
                     <a href="#proyectos" data-i18n="hero-projects-btn">Proyectos</a>
-                    <a href="cv/cv.pdf" download class="cv-btn" data-i18n="hero-cv-btn">Descargar CV</a>
+                    <a href="cv/cv_es.pdf" download class="cv-btn" id="cv-download-btn" data-i18n="hero-cv-btn">Descargar CV</a>
                 </div>
             </div>
         </section>
@@ -406,6 +406,8 @@
         });
         typingEl.textContent = typingTexts[lang];
         document.documentElement.lang = lang;
+        const cvBtn = document.getElementById('cv-download-btn');
+        if (cvBtn) cvBtn.href = `cv/cv_${lang}.pdf`;
     }
 
     function toggleLang() { setLang(currentLang === 'es' ? 'en' : 'es'); }
