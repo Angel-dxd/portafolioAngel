@@ -2,10 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "portfolio",
+      "name": "portafolio",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "3400", "."],
-      "port": 3400
+      "runtimeArgs": ["serve", "-l", "4321", "."],
+      "port": 4321
     }
   ]
 }
