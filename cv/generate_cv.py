@@ -19,13 +19,7 @@ from PIL import Image as PILImage
 OUT_ES   = "/Users/angelxavier/portafolioAngel/cv/cv_es.pdf"
 OUT_EN   = "/Users/angelxavier/portafolioAngel/cv/cv_en.pdf"
 PHOTO    = "/Users/angelxavier/portafolioAngel/img/foto_clean.png"
-FONT_VAR = "/tmp/inter_fonts/InterVariable.ttf"
-
-# ── Fonts ──────────────────────────────────────────────────────────────────
-pdfmetrics.registerFont(TTFont("Inter",      FONT_VAR))
-pdfmetrics.registerFont(TTFont("Inter-Bold", FONT_VAR))
-pdfmetrics.registerFontFamily("Inter", normal="Inter", bold="Inter-Bold",
-                               italic="Inter", boldItalic="Inter-Bold")
+# Using standard ReportLab Helvetica font
 
 # ── Colors ─────────────────────────────────────────────────────────────────
 NAVY    = HexColor("#0d1f35")
@@ -47,7 +41,7 @@ PAD_IN  = 7 * mm
 
 # ── Style helper ───────────────────────────────────────────────────────────
 def S(name, size=9, color=WHITE, bold=False, align=TA_LEFT, leading=None):
-    return ParagraphStyle(name, fontName="Inter-Bold" if bold else "Inter",
+    return ParagraphStyle(name, fontName="Helvetica-Bold" if bold else "Helvetica",
                           fontSize=size, textColor=color,
                           leading=leading or size * 1.45,
                           alignment=align, spaceBefore=0, spaceAfter=0)
@@ -69,14 +63,14 @@ class Pill(Flowable):
     def __init__(self, text, bg=PILL_BG, fg=LIGHT):
         from reportlab.pdfbase.pdfmetrics import stringWidth
         self.text = text; self.bg = bg; self.fg = fg
-        self.width  = stringWidth(text, "Inter", self.FS) + self.PX * 2
+        self.width  = stringWidth(text, "Helvetica", self.FS) + self.PX * 2
         self.height = self.FS + self.PY * 2
     def draw(self):
         c = self.canv
         c.setFillColor(self.bg)
         c.roundRect(0, 0, self.width, self.height, self.R, fill=1, stroke=0)
         c.setFillColor(self.fg)
-        c.setFont("Inter", self.FS)
+        c.setFont("Helvetica", self.FS)
         c.drawString(self.PX, self.PY + 0.5, self.text)
 
 class PillRow(Flowable):

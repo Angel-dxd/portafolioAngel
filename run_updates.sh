@@ -1,6 +1,9 @@
 #!/bin/bash
 cd /Users/angelxavier/portafolioAngel
 
+echo "Instalando dependencias necesarias para el CV..."
+pip3 install reportlab Pillow --quiet
+
 echo "Generando CV..."
 python3 cv/generate_cv.py
 
