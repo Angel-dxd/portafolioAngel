@@ -20,6 +20,9 @@
     <meta name="twitter:title" content="Angel Xavier — Desarrollador Junior Fullstack">
     <meta name="twitter:description" content="Desarrollador especializado en backend con dominio del stack completo.">
     <meta name="twitter:image" content="https://angel-dxd.github.io/portafolioAngel/img/boutique-dashboard.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
@@ -63,7 +66,7 @@
                     técnica como sentido de negocio.
                 </p>
                 <div class="hero-actions">
-                    <a href="#proyectos" data-i18n="hero-projects-btn">Proyectos</a>
+                    <a href="#proyectos" class="btn-outline" data-i18n="hero-projects-btn">Proyectos</a>
                     <a href="cv/cv_es.pdf" download="Curriculum_Angel_Xavier.pdf" class="cv-btn" id="cv-download-btn"
                         data-i18n="hero-cv-btn">Descargar CV</a>
                 </div>
@@ -373,9 +376,43 @@
                 </div>
             </div>
         </section>
+        <section id="contacto">
+            <span class="text-white" data-i18n="section-contact">05/ Contacto</span>
+            <div class="contact-wrapper">
+                <div class="contact-intro">
+                    <p class="about-detail" data-i18n="contact-intro">¿Tienes un proyecto en mente o quieres que hablemos? Escríbeme directamente.</p>
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/angel-xavier-pons-marquez/" target="_blank" rel="noopener noreferrer" class="contact-social">
+                            <iconify-icon icon="simple-icons:linkedin" width="16" height="16"></iconify-icon> LinkedIn
+                        </a>
+                        <a href="https://github.com/Angel-dxd" target="_blank" rel="noopener noreferrer" class="contact-social">
+                            <iconify-icon icon="simple-icons:github" width="16" height="16" style="color:#fff"></iconify-icon> GitHub
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name" data-i18n="contact-label-name">Nombre</label>
+                            <input type="text" id="contact-name" name="name" autocomplete="name" data-i18n-placeholder="contact-placeholder-name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email" data-i18n="contact-label-email">Email</label>
+                            <input type="email" id="contact-email" name="email" autocomplete="email" placeholder="tu@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message" data-i18n="contact-label-message">Mensaje</label>
+                        <textarea id="contact-message" name="message" rows="5" data-i18n-placeholder="contact-placeholder-message" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-outline contact-submit" data-i18n="contact-btn">Enviar mensaje</button>
+                    <p class="contact-feedback" id="contact-feedback" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <footer id="contacto">
+    <footer>
         <p class="footer-left">Angel Xavier Pons Márquez © 2026</p>
         <div class="footer-right">
             <a href="https://github.com/Angel-dxd" target="_blank">Github</a>
@@ -455,7 +492,7 @@
             es: {
                 'nav-about': 'Sobre mí', 'nav-projects': 'Proyectos', 'nav-education': 'Formación',
                 'nav-contact': 'Contacto', 'nav-status': 'Disponible',
-                'hero-desc': 'Desarrollador Full-Stack especializado en JavaScript y tecnologías web modernas. Me interesa construir aplicaciones limpias, funcionales y orientadas a producto, combinando desarrollo técnico con conocimientos en Contabilidad y Finanzas.',
+                'hero-desc': 'Desarrollador especializado en backend con dominio del stack completo. Construyo sistemas robustos y escalables — desde la arquitectura hasta la interfaz. Con base en Contabilidad y Finanzas, el software que desarrollo tiene tanto calidad técnica como sentido de negocio.',
                 'hero-projects-btn': 'Proyectos', 'hero-cv-btn': 'Descargar CV',
                 'section-profile': '01/ Perfil',
                 'about-text': 'Especializado en <em>backend</em>, con dominio del <em>stack completo</em>. Construyo sistemas robustos y escalables — desde la arquitectura hasta la interfaz.',
@@ -479,6 +516,11 @@
                 'edu-2-title': 'Desarrollo de Aplicaciones Multiplataforma (DAM)',
                 'exp-1-role': 'Desarrollador Web — Gestión de inventario',
                 'exp-1-date': 'Febrero — Mayo 2025', 'exp-2-date': 'Noviembre 2025 — Marzo 2026',
+                'section-contact': '05/ Contacto',
+                'contact-intro': '¿Tienes un proyecto en mente o quieres que hablemos? Escríbeme directamente.',
+                'contact-label-name': 'Nombre', 'contact-label-email': 'Email', 'contact-label-message': 'Mensaje',
+                'contact-placeholder-name': 'Tu nombre', 'contact-placeholder-message': 'Cuéntame sobre tu proyecto...',
+                'contact-btn': 'Enviar mensaje', 'contact-success': '¡Mensaje enviado! Te responderé pronto.',
             },
             en: {
                 'nav-about': 'About me', 'nav-projects': 'Projects', 'nav-education': 'Education',
@@ -507,6 +549,11 @@
                 'edu-2-title': 'Multiplatform Application Development (DAM)',
                 'exp-1-role': 'Web Developer — Inventory management',
                 'exp-1-date': 'February — May 2025', 'exp-2-date': 'November 2025 — March 2026',
+                'section-contact': '05/ Contact',
+                'contact-intro': 'Have a project in mind or want to talk? Write to me directly.',
+                'contact-label-name': 'Name', 'contact-label-email': 'Email', 'contact-label-message': 'Message',
+                'contact-placeholder-name': 'Your name', 'contact-placeholder-message': 'Tell me about your project...',
+                'contact-btn': 'Send message', 'contact-success': 'Message sent! I\'ll get back to you soon.',
             }
         };
 
@@ -524,6 +571,10 @@
             document.querySelectorAll('[data-i18n-html]').forEach(el => {
                 const key = el.getAttribute('data-i18n-html');
                 if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (i18n[lang][key] !== undefined) el.placeholder = i18n[lang][key];
             });
             typingEl.textContent = typingTexts[lang];
             document.documentElement.lang = lang;
@@ -580,6 +631,21 @@
             document.getElementById('nav-menu').classList.remove('open');
             document.querySelector('.hamburger').classList.remove('active');
         }
+
+        // Contact form
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
+            if (!name || !email || !message) return;
+            const subject = encodeURIComponent(`Contacto desde portafolio — ${name}`);
+            const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\n${message}`);
+            window.location.href = `mailto:angelxavierponsmarquez2018@gmail.com?subject=${subject}&body=${body}`;
+            const feedback = document.getElementById('contact-feedback');
+            feedback.textContent = i18n[currentLang]['contact-success'];
+            setTimeout(() => { feedback.textContent = ''; }, 5000);
+        });
     </script>
 </body>
 
