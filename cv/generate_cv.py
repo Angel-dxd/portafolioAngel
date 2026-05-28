@@ -16,9 +16,10 @@ from reportlab.pdfbase.ttfonts import TTFont
 from PIL import Image as PILImage
 
 # ── Paths ──────────────────────────────────────────────────────────────────
-OUT_ES   = "/Users/angelxavier/portafolioAngel/cv/cv_es.pdf"
-OUT_EN   = "/Users/angelxavier/portafolioAngel/cv/cv_en.pdf"
-PHOTO    = "/Users/angelxavier/portafolioAngel/img/foto_clean.png"
+_BASE   = os.path.dirname(os.path.abspath(__file__))
+OUT_ES  = os.path.join(_BASE, "cv_es.pdf")
+OUT_EN  = os.path.join(_BASE, "cv_en.pdf")
+PHOTO   = os.path.join(_BASE, "..", "img", "foto_clean.png")
 # Using standard ReportLab Helvetica font
 
 # ── Colors ─────────────────────────────────────────────────────────────────
@@ -185,6 +186,7 @@ CONTENT = {
                 date    = "2022 – 2023",
                 bullets = [
                     "Gestión de nóminas, seguros sociales y beneficios laborales",
+                    "Automatización de informes financieros en hoja de cálculo — base para aplicar lógica de negocio al software",
                 ],
                 stack = [],
             ),
@@ -193,16 +195,28 @@ CONTENT = {
             dict(
                 name  = "Boutique Market ERP",
                 link  = "github.com/Angel-dxd/boutique-market",
-                desc  = ("Sistema <b>multitenant</b> de gestión de inventarios y servicios "
-                         "para múltiples clientes con aislamiento total de datos por cliente."),
-                stack = ["Node.js","JavaScript","MySQL","BCrypt","Tailwind"],
+                url   = "https://github.com/Angel-dxd/boutique-market",
+                desc  = ("ERP <b>multitenant</b> desplegado en producción para dos negocios. "
+                         "Backend Node.js + Express en Render, <b>PostgreSQL</b> en Supabase y "
+                         "frontend en Vercel. Aislamiento por tenant con JWT y AES-256-CBC."),
+                stack = ["Node.js","JavaScript","PostgreSQL","Supabase","BCrypt","Tailwind"],
             ),
             dict(
                 name  = "Contract Manager",
                 link  = "Onna Digital · privado",
+                url   = None,
                 desc  = ("App web de gestión de contratos y recursos cloud con <b>doble rol</b> "
                          "(Admin/Cliente), integrada con Dolibarr como ERP central."),
                 stack = ["TypeScript","Docker","Kubernetes","Helm","GitLab CI"],
+            ),
+            dict(
+                name  = "StudyAI Pro",
+                link  = "studyai-pro.vercel.app",
+                url   = "https://studyai-pro.vercel.app",
+                desc  = ("App web que convierte cualquier PDF en un test de opción múltiple. "
+                         "La IA genera preguntas personalizadas por dificultad e idioma. "
+                         "Historial de sesiones, puntuación y exportación de resultados en PDF."),
+                stack = ["JavaScript","Supabase","Vercel","jsPDF"],
             ),
         ],
         edu = [
@@ -265,6 +279,7 @@ CONTENT = {
                 date    = "2022 – 2023",
                 bullets = [
                     "Payroll management, social security and employee benefits for client portfolio",
+                    "Automated financial reporting with spreadsheets — foundation for applying business logic to software",
                 ],
                 stack = [],
             ),
@@ -273,16 +288,28 @@ CONTENT = {
             dict(
                 name  = "Boutique Market ERP",
                 link  = "github.com/Angel-dxd/boutique-market",
-                desc  = ("A <b>multitenant</b> inventory and services management system "
-                         "for multiple commercial clients with full per-client data isolation."),
-                stack = ["Node.js","JavaScript","MySQL","BCrypt","Tailwind"],
+                url   = "https://github.com/Angel-dxd/boutique-market",
+                desc  = ("Multi-tenant ERP deployed in production for two businesses. "
+                         "Node.js + Express backend on Render, <b>PostgreSQL</b> on Supabase, "
+                         "frontend on Vercel. Per-tenant isolation with JWT and AES-256-CBC."),
+                stack = ["Node.js","JavaScript","PostgreSQL","Supabase","BCrypt","Tailwind"],
             ),
             dict(
                 name  = "Contract Manager",
                 link  = "Onna Digital · private",
+                url   = None,
                 desc  = ("Web app for contract and cloud resource management with <b>dual role</b> "
                          "(Admin/Client), integrated with Dolibarr as the central ERP."),
                 stack = ["TypeScript","Docker","Kubernetes","Helm","GitLab CI"],
+            ),
+            dict(
+                name  = "StudyAI Pro",
+                link  = "studyai-pro.vercel.app",
+                url   = "https://studyai-pro.vercel.app",
+                desc  = ("Web app that turns any PDF into a multiple-choice quiz. "
+                         "AI generates personalized questions by difficulty and language. "
+                         "Session history, scoring and PDF export of results."),
+                stack = ["JavaScript","Supabase","Vercel","jsPDF"],
             ),
         ],
         edu = [
@@ -297,20 +324,22 @@ CONTENT = {
 
 SKILL_GROUPS = {
     "es": [
-        ("Frontend",  ["HTML","CSS","JS","TypeScript","Tailwind","Bootstrap"]),
-        ("Backend",   ["Node.js","PHP","Nginx"]),
-        ("DevOps",    ["Docker","Kubernetes","Helm","GitLab CI"]),
-        ("Databases", ["MySQL","MongoDB","PostgreSQL"]),
-        ("SO",        ["Debian","Ubuntu","Linux"]),
-        ("Tools",     ["Git","GitHub","VSCode","Figma","FreeLens"]),
+        ("Frontend",    ["HTML","CSS","JS","TypeScript","Tailwind","Bootstrap"]),
+        ("Backend",     ["Node.js","PHP","Nginx"]),
+        ("Mobile / JVM",["Java","Kotlin","Android Studio","Python","C++"]),
+        ("DevOps",      ["Docker","Kubernetes","Helm","GitLab CI"]),
+        ("Databases",   ["MySQL","MongoDB","PostgreSQL"]),
+        ("S. Operativos",["Debian","Ubuntu","Linux"]),
+        ("Tools",       ["Git","GitHub","VSCode","Figma","FreeLens"]),
     ],
     "en": [
-        ("Frontend",  ["HTML","CSS","JS","TypeScript","Tailwind","Bootstrap"]),
-        ("Backend",   ["Node.js","PHP","Nginx"]),
-        ("DevOps",    ["Docker","Kubernetes","Helm","GitLab CI"]),
-        ("Databases", ["MySQL","MongoDB","PostgreSQL"]),
-        ("OS",        ["Debian","Ubuntu","Linux"]),
-        ("Tools",     ["Git","GitHub","VSCode","Figma","FreeLens"]),
+        ("Frontend",    ["HTML","CSS","JS","TypeScript","Tailwind","Bootstrap"]),
+        ("Backend",     ["Node.js","PHP","Nginx"]),
+        ("Mobile / JVM",["Java","Kotlin","Android Studio","Python","C++"]),
+        ("DevOps",      ["Docker","Kubernetes","Helm","GitLab CI"]),
+        ("Databases",   ["MySQL","MongoDB","PostgreSQL"]),
+        ("OS",          ["Debian","Ubuntu","Linux"]),
+        ("Tools",       ["Git","GitHub","VSCode","Figma","FreeLens"]),
     ],
 }
 
@@ -345,7 +374,7 @@ def build(lang, output):
     for icon, text in [
         ("✉", "angelxavierponsmarquez2018\n@gmail.com"),
         ("in","linkedin/angel-xavier-\npons-marquez"),
-        ("⌥","github.com/Angel-dxd"),
+        ("GH","github.com/Angel-dxd"),
         ("✆","+34 640 105 492"),
         ("◎","Valencia, España"),
     ]:
@@ -398,9 +427,13 @@ def build(lang, output):
 
     story += sec(c["sec_proj"])
     for p in c["projects"]:
+        if p.get("url"):
+            link_part = f'<a href="{p["url"]}"><font color="#475569">{p["link"]}</font></a>'
+        else:
+            link_part = f'<font color="#475569">{p["link"]}</font>'
         story.append(Paragraph(
             f'<b><font color="#3b82f6">{p["name"]}</font></b>'
-            f'<font color="#475569">  —  {p["link"]}</font>', sPROJ))
+            f'  —  {link_part}', sPROJ))
         story.append(Paragraph(p["desc"], sBODY))
         story.append(Spacer(1, 1.5*mm))
         story.append(PillRow(p["stack"], main_w, PILL_BG, MUTED))
@@ -424,5 +457,5 @@ build("en", OUT_EN)
 
 # Keep cv.pdf pointing to Spanish version (default)
 import shutil
-shutil.copy(OUT_ES, "/Users/angelxavier/portafolioAngel/cv/cv.pdf")
+shutil.copy(OUT_ES, os.path.join(_BASE, "cv.pdf"))
 print("✓ cv.pdf → ES (default)")
