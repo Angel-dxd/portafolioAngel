@@ -333,22 +333,30 @@
                 </div>
                 <div class="project-card-body">
                     <div class="project-card-desc">
-                        <p data-i18n="aurion-desc">Plataforma e-commerce premium de óptica oftálmica avanzada. Un simulador real con foco en rendimiento (60fps), UX y robustez técnica con pruebas unitarias/E2E y pipeline CI/CD.</p>
+                        <p data-i18n="aurion-desc">E-commerce de óptica oftálmica refactorizado de monolito a arquitectura modular: componentes atómicos React, migración híbrida a TypeScript, accesibilidad WCAG 2.1 AA y cobertura de tests unitarios/E2E al 100%.</p>
                         <div class="project-roles">
                             <div class="role-block">
-                                <span class="role-title" data-i18n="aurion-role-ux">Experiencia & Estado</span>
+                                <span class="role-title" data-i18n="aurion-role-arch">Arquitectura & Modularización</span>
                                 <ul>
-                                    <li data-i18n="aurion-ux-1">Cajón lateral interactivo (Prescription Drawer) para graduación avanzada a 60fps</li>
-                                    <li data-i18n="aurion-ux-2">Estado global reactivo con Zustand y persistencia automática en LocalStorage</li>
-                                    <li data-i18n="aurion-ux-3">Checkout de 3 pasos con validaciones estrictas vía React Hook Form y Zod</li>
+                                    <li data-i18n="aurion-arch-1">God Component (600+ líneas) descompuesto en atómicos: <code>ProductCard</code>, <code>ProductDetailsModal</code>, <code>TechComparisonTable</code></li>
+                                    <li data-i18n="aurion-arch-2">Code Splitting con <code>React.lazy</code> + <code>Suspense</code> en rutas principales para reducir el bundle inicial</li>
+                                    <li data-i18n="aurion-arch-3"><code>PrescriptionDrawer</code> unificado con modo <code>add | edit</code>, eliminando duplicación total entre catálogo y carrito</li>
                                 </ul>
                             </div>
                             <div class="role-block">
-                                <span class="role-title" data-i18n="aurion-role-qa">Calidad & CI/CD</span>
+                                <span class="role-title" data-i18n="aurion-role-ts">TypeScript & Estado</span>
                                 <ul>
-                                    <li data-i18n="aurion-qa-1">Pruebas unitarias ultrarrápidas con Vitest para blindar la lógica de negocio</li>
-                                    <li data-i18n="aurion-qa-2">Tests de integración E2E automatizados con Playwright simulando flujos reales</li>
-                                    <li data-i18n="aurion-qa-3">Pipeline de CI/CD configurado en GitHub Actions para testing y build automatizados</li>
+                                    <li data-i18n="aurion-ts-1">Migración híbrida TS: interfaces centrales <code>Gafa</code>, <code>Receta</code>, <code>CartItem</code> y <code>CartStore</code> en <code>src/types/index.ts</code></li>
+                                    <li data-i18n="aurion-ts-2">Store Zustand migrado a <code>.ts</code> con tipado estricto en transiciones de estado y persistencia en <code>localStorage</code></li>
+                                    <li data-i18n="aurion-ts-3">Constantes ópticas centralizadas (<code>OPT_ESFERAS</code>, <code>OPT_CILINDROS</code>, <code>RECETA_DEFAULT</code>) eliminando magic numbers</li>
+                                </ul>
+                            </div>
+                            <div class="role-block">
+                                <span class="role-title" data-i18n="aurion-role-qa">A11y, Calidad & CI/CD</span>
+                                <ul>
+                                    <li data-i18n="aurion-qa-1">WCAG 2.1 AA: Focus Trap en modales, <code>aria-label</code> dinámicos y navegación semántica con <code>react-router-dom</code></li>
+                                    <li data-i18n="aurion-qa-2">Error Boundary global con UI de recuperación elegante + Vitest (unitarios) y Playwright (E2E) al 100%</li>
+                                    <li data-i18n="aurion-qa-3">Pipeline CI/CD en GitHub Actions para testing automático y build en cada push</li>
                                 </ul>
                             </div>
                         </div>
@@ -360,6 +368,8 @@
                     <div class="project-card-stack">
                         <span class="tech-badge"><iconify-icon icon="logos:react" width="16"
                                 height="16"></iconify-icon> React</span>
+                        <span class="tech-badge"><iconify-icon icon="logos:typescript-icon" width="16"
+                                height="16"></iconify-icon> TypeScript</span>
                         <span class="tech-badge"><iconify-icon icon="logos:vitejs" width="16"
                                 height="16"></iconify-icon> Vite</span>
                         <span class="tech-badge"><iconify-icon icon="logos:javascript" width="16"
@@ -378,6 +388,11 @@
                                 <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
                                 <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
                             </svg> Zod</span>
+                        <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M9 11l3 3L22 4"/>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                            </svg> RHF</span>
                         <span class="tech-badge"><iconify-icon icon="logos:framer" width="16"
                                 height="16"></iconify-icon> Framer Motion</span>
                         <span class="tech-badge"><iconify-icon icon="logos:vitest" width="16"
@@ -578,15 +593,19 @@
                 'studyai-desc': 'Aplicación web que convierte cualquier PDF en un test de opción múltiple. La IA analiza el contenido y genera preguntas personalizadas según dificultad e idioma. Incluye historial de sesiones, puntuación y exportación de resultados en PDF.',
                 'aurion-link': 'Ver en vivo →',
                 'aurion-github': 'Ver en Github →',
-                'aurion-desc': 'Plataforma e-commerce premium de óptica oftálmica avanzada. Un simulador real con foco en rendimiento (60fps), UX y robustez técnica con pruebas unitarias/E2E y pipeline CI/CD.',
-                'aurion-role-ux': 'Experiencia & Estado',
-                'aurion-ux-1': 'Cajón lateral interactivo (Prescription Drawer) para graduación avanzada a 60fps.',
-                'aurion-ux-2': 'Estado global reactivo con Zustand y persistencia automática en LocalStorage.',
-                'aurion-ux-3': 'Checkout de 3 pasos con validaciones estrictas vía React Hook Form y Zod.',
-                'aurion-role-qa': 'Calidad & CI/CD',
-                'aurion-qa-1': 'Pruebas unitarias ultrarrápidas con Vitest para blindar la lógica de negocio.',
-                'aurion-qa-2': 'Tests de integración E2E automatizados con Playwright simulando flujos reales.',
-                'aurion-qa-3': 'Pipeline de CI/CD configurado en GitHub Actions para testing y build automatizados.',
+                'aurion-desc': 'E-commerce de óptica oftálmica refactorizado de monolito a arquitectura modular: componentes atómicos React, migración híbrida a TypeScript, accesibilidad WCAG 2.1 AA y cobertura de tests unitarios/E2E al 100%.',
+                'aurion-role-arch': 'Arquitectura & Modularización',
+                'aurion-arch-1': 'God Component (600+ líneas) descompuesto en atómicos: ProductCard, ProductDetailsModal, TechComparisonTable.',
+                'aurion-arch-2': 'Code Splitting con React.lazy + Suspense en rutas principales para reducir el bundle inicial.',
+                'aurion-arch-3': 'PrescriptionDrawer unificado con modo add | edit, eliminando duplicación entre catálogo y carrito.',
+                'aurion-role-ts': 'TypeScript & Estado',
+                'aurion-ts-1': 'Migración híbrida TS: interfaces centrales Gafa, Receta, CartItem y CartStore en src/types/index.ts.',
+                'aurion-ts-2': 'Store Zustand migrado a .ts con tipado estricto en transiciones de estado y persistencia en localStorage.',
+                'aurion-ts-3': 'Constantes ópticas centralizadas (OPT_ESFERAS, OPT_CILINDROS, RECETA_DEFAULT) eliminando magic numbers.',
+                'aurion-role-qa': 'A11y, Calidad & CI/CD',
+                'aurion-qa-1': 'WCAG 2.1 AA: Focus Trap en modales, aria-label dinámicos y navegación semántica con react-router-dom.',
+                'aurion-qa-2': 'Error Boundary global con UI de recuperación elegante + Vitest (unitarios) y Playwright (E2E) al 100%.',
+                'aurion-qa-3': 'Pipeline CI/CD en GitHub Actions para testing automático y build en cada push.',
                 'section-education': '04/ Formación & Experiencia',
                 'edu-type': 'Formación', 'exp-type': 'Prácticas',
                 'edu-1-title': 'Grado Superior — Contabilidad y Finanzas',
@@ -622,15 +641,19 @@
                 'studyai-desc': 'Web app that turns any PDF into a multiple-choice quiz. The AI analyzes the content and generates personalized questions by difficulty and language. Includes session history, scoring and PDF export of results.',
                 'aurion-link': 'View live →',
                 'aurion-github': 'View on Github →',
-                'aurion-desc': 'Premium e-commerce platform for advanced ophthalmic optics. A real simulator focused on performance (60fps), UX, and technical robustness with unit/E2E testing and a CI/CD pipeline.',
-                'aurion-role-ux': 'UX & State Management',
-                'aurion-ux-1': 'Interactive side panel (Prescription Drawer) for advanced prescriptions at 60fps.',
-                'aurion-ux-2': 'Reactive global state with Zustand and automatic synchronization in LocalStorage.',
-                'aurion-ux-3': '3-step checkout with strict validation via React Hook Form and Zod.',
-                'aurion-role-qa': 'Quality Assurance & CI/CD',
-                'aurion-qa-1': 'Ultra-fast unit testing with Vitest to safeguard core business logic.',
-                'aurion-qa-2': 'Automated end-to-end integration tests using Playwright simulating real user flows.',
-                'aurion-qa-3': 'CI/CD pipeline configured with GitHub Actions for automated testing and production builds.',
+                'aurion-desc': 'Ophthalmic e-commerce refactored from monolith to modular architecture: atomic React components, hybrid TypeScript migration, WCAG 2.1 AA accessibility, and 100% unit/E2E test coverage.',
+                'aurion-role-arch': 'Architecture & Modularization',
+                'aurion-arch-1': 'God Component (600+ lines) broken into atomics: ProductCard, ProductDetailsModal, TechComparisonTable.',
+                'aurion-arch-2': 'Code Splitting with React.lazy + Suspense on main routes to reduce initial bundle size.',
+                'aurion-arch-3': 'Unified PrescriptionDrawer with add | edit mode, eliminating full duplication between catalog and cart.',
+                'aurion-role-ts': 'TypeScript & State',
+                'aurion-ts-1': 'Hybrid TS migration: core interfaces Gafa, Receta, CartItem and CartStore in src/types/index.ts.',
+                'aurion-ts-2': 'Zustand store migrated to .ts with strict typing on state transitions and localStorage persistence.',
+                'aurion-ts-3': 'Centralized optical constants (OPT_ESFERAS, OPT_CILINDROS, RECETA_DEFAULT) removing magic numbers.',
+                'aurion-role-qa': 'A11y, Quality & CI/CD',
+                'aurion-qa-1': 'WCAG 2.1 AA: Focus Trap in modals, dynamic aria-labels and semantic navigation via react-router-dom.',
+                'aurion-qa-2': 'Global Error Boundary with elegant recovery UI + Vitest (unit) and Playwright (E2E) at 100%.',
+                'aurion-qa-3': 'CI/CD pipeline on GitHub Actions for automated testing and build on every push.',
                 'section-education': '04/ Education & Experience',
                 'edu-type': 'Education', 'exp-type': 'Internship',
                 'edu-1-title': 'Higher Degree — Accounting & Finance',
