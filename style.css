@@ -5,7 +5,8 @@
     --bg-dark: #0c1e35;
     --text-main: #a1a1aa;
     --text-white: #ffffff;
-    --accent: #3b82f6;
+    --accent: #3b82f6;           /* Para botones, bordes, elementos UI interactivos */
+    --accent-light: #60a5fa;     /* Para texto/etiquetas sobre fondo oscuro — Contraste 5.5:1 (WCAG AA) */
     --border: rgba(255, 255, 255, 0.1);
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -34,11 +35,18 @@ body::before {
     inset: 0;
     z-index: 0;
     pointer-events: none;
+    will-change: transform;
     background:
         radial-gradient(ellipse 80% 60% at 20% 20%, rgba(59, 130, 246, 0.18) 0%, transparent 70%),
         radial-gradient(ellipse 60% 50% at 80% 80%, rgba(99, 102, 241, 0.14) 0%, transparent 70%),
         radial-gradient(ellipse 50% 40% at 60% 10%, rgba(14, 165, 233, 0.10) 0%, transparent 60%);
     animation: aurora 10s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+    }
 }
 
 body > * {
@@ -405,10 +413,10 @@ h1 {
 }
 
 .stack-cat-title {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--accent);
+    color: var(--accent-light);
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -496,7 +504,7 @@ h1 {
 
 .timeline-subtitle {
     font-size: 0.9rem;
-    color: var(--accent);
+    color: var(--accent-light);
 }
 
 .about-text {
@@ -507,6 +515,33 @@ h1 {
 .about-text em {
     color: var(--accent);
     font-style: normal;
+}
+
+/* Clases semánticas — secciones y proyectos */
+.section-title {
+    display: block;
+    font-size: clamp(1rem, 3vw, 1.15rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-white);
+    margin-bottom: 2rem;
+}
+
+.project-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-white);
+    font-family: var(--font-sans);
+    margin: 0;
+}
+
+.project-title em {
+    color: var(--accent);
+    font-style: normal;
+}
+
+.boutique-header {
+    margin-bottom: 0.75rem;
 }
 
 .about-detail {
@@ -570,18 +605,24 @@ iconify-icon {
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--border);
+    aspect-ratio: 16 / 9;
+    background: rgba(0,0,0,0.2);
 }
 
 .slider-track {
     display: flex;
+    height: 100%;
     transition: transform 0.4s ease;
 }
 
 .slide {
     min-width: 100%;
     width: 100%;
+    height: 100%;
     display: block;
     object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
 }
 
 .slider-btn {
@@ -635,7 +676,7 @@ iconify-icon {
 .project-link {
     display: inline-block;
     margin-top: 1rem;
-    color: var(--accent);
+    color: var(--accent-light);
     font-weight: bold;
 }
 
@@ -697,8 +738,8 @@ iconify-icon {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--accent);
-    border: 1px solid var(--accent);
+    color: var(--accent-light);
+    border: 1px solid var(--accent-light);
     border-radius: 20px;
     padding: 0.15rem 0.6rem;
 }
@@ -732,7 +773,7 @@ iconify-icon {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--accent);
+    color: var(--accent-light);
     margin-bottom: 0.75rem;
 }
 
