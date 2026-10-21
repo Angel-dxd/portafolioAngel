@@ -4,476 +4,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angel Xavier — Desarrollador Junior Fullstack</title>
+    <title>Angel Xavier — Desarrollador Fullstack · Backend</title>
     <meta name="description"
-        content="Portafolio de Angel Xavier Pons Márquez, desarrollador fullstack especializado en backend. Node.js, TypeScript, Docker, Kubernetes. Valencia, 2026.">
+        content="Portafolio de Angel Xavier Pons Márquez, desarrollador fullstack junior especializado en backend: Node.js, TypeScript, PostgreSQL y Docker. Valencia, España.">
     <meta name="keywords"
-        content="desarrollador fullstack, backend developer, Node.js, TypeScript, Docker, Kubernetes, Valencia, DAM">
+        content="desarrollador backend, desarrollador fullstack, Node.js, TypeScript, PostgreSQL, Docker, Kubernetes, React, Valencia, DAM">
     <meta name="author" content="Angel Xavier Pons Márquez">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://angel-dxd.github.io/portafolioAngel/">
-    <meta property="og:title" content="Angel Xavier — Desarrollador Junior Fullstack">
+    <meta property="og:title" content="Angel Xavier — Desarrollador Fullstack · Backend">
     <meta property="og:description"
-        content="Desarrollador especializado en backend con dominio del stack completo. Proyectos reales, arquitectura sólida y visión de negocio.">
-    <meta property="og:image" content="https://angel-dxd.github.io/portafolioAngel/img/entrada-arelys.png">
+        content="APIs y sistemas de gestión con Node.js, TypeScript y PostgreSQL. Proyectos reales en producción.">
+    <meta property="og:image" content="https://angel-dxd.github.io/portafolioAngel/img/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Angel Xavier — Desarrollador Junior Fullstack">
-    <meta name="twitter:description" content="Desarrollador especializado en backend con dominio del stack completo.">
-    <meta name="twitter:image" content="https://angel-dxd.github.io/portafolioAngel/img/entrada-arelys.png">
+    <meta name="twitter:title" content="Angel Xavier — Desarrollador Fullstack · Backend">
+    <meta name="twitter:description" content="APIs y sistemas de gestión con Node.js, TypeScript y PostgreSQL.">
+    <meta name="twitter:image" content="https://angel-dxd.github.io/portafolioAngel/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 
 <body>
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
+    <a class="skip-link" href="#proyectos" data-i18n="skip-link">Saltar a proyectos</a>
     <button class="back-to-top" aria-label="Volver arriba">↑</button>
+
     <header>
         <nav>
-            <span class="text-white">Angel Xavier</span>
+            <a href="#inicio" class="brand" aria-label="Angel Xavier — inicio"><span class="monogram">AX</span><span class="brand-name">Angel Xavier</span></a>
             <ul id="nav-menu">
-                <li><a href="#perfil" data-i18n="nav-about" onclick="closeMenu()">Sobre mí</a></li>
+                <li><a href="#sobre-mi" data-i18n="nav-about" onclick="closeMenu()">Sobre mí</a></li>
                 <li><a href="#proyectos" data-i18n="nav-projects" onclick="closeMenu()">Proyectos</a></li>
-                <li><a href="#formacion" data-i18n="nav-education" onclick="closeMenu()">Formación</a></li>
+                <li><a href="#stack" data-i18n="nav-stack" onclick="closeMenu()">Stack</a></li>
+                <li><a href="#experiencia" data-i18n="nav-experience" onclick="closeMenu()">Experiencia</a></li>
                 <li><a href="#contacto" data-i18n="nav-contact" onclick="closeMenu()">Contacto</a></li>
             </ul>
             <div class="nav-right">
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch to English">EN</button>
                 <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
                     <span></span><span></span><span></span>
                 </button>
-                <button class="lang-toggle" onclick="toggleLang()">EN</button>
-                <div class="status-container">
-                    <span class="status-dot"></span>
-                    <span class="text-white" data-i18n="nav-status">Disponible</span>
-                </div>
             </div>
         </nav>
     </header>
 
+    <aside class="side-social" aria-label="Redes">
+        <a href="https://github.com/Angel-dxd" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><iconify-icon icon="simple-icons:github" width="18" height="18"></iconify-icon></a>
+        <a href="https://www.linkedin.com/in/angel-xavier-pons-marquez/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><iconify-icon icon="simple-icons:linkedin" width="18" height="18"></iconify-icon></a>
+        <a href="mailto:angelxavierponsmarquez2018@gmail.com" aria-label="Email"><iconify-icon icon="lucide:mail" width="18" height="18"></iconify-icon></a>
+    </aside>
+
     <main>
-        <section id="inicio">
-            <div class="home-text">
-                <div class="avatar"><img src="img/foto_clean.webp" alt="Angel Xavier"></div>
-                <h1 class="hero-name">Angel Xavier</h1>
-                <p class="hero-role"><span class="typing-target"></span><span class="typing-cursor">|</span></p>
-                <p class="text-white hero-desc" data-i18n="hero-desc">Desarrollador especializado en backend con dominio
-                    del stack completo. Construyo sistemas robustos y escalables — desde la arquitectura hasta la
-                    interfaz. Con base en Contabilidad y Finanzas, el software que desarrollo tiene tanto calidad
-                    técnica como sentido de negocio.
+        <!-- ============ HERO ============ -->
+        <section id="inicio" class="hero">
+            <div class="hero-main">
+                <p class="eyebrow">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span data-i18n="hero-status">Disponible para trabajar · Valencia, España</span>
                 </p>
+                <p class="hero-hello" data-i18n="hero-hello">Hola, soy</p>
+                <h1 class="hero-name">Angel Xavier Pons</h1>
+                <p class="hero-role" data-i18n="hero-role">Desarrollador Fullstack Junior, especializado en backend.</p>
+                <p class="hero-desc" data-i18n="hero-desc">Diseño y construyo APIs y sistemas de gestión con Node.js,
+                    TypeScript y PostgreSQL, y los despliego con Docker y CI/CD. Tras terminar DAM, me estoy
+                    especializando en Inteligencia Artificial y Big Data, y mi base en Contabilidad y Finanzas me ayuda
+                    a entender el negocio antes de escribir la primera línea de código.</p>
                 <div class="hero-actions">
-                    <a href="#proyectos" class="btn-outline" data-i18n="hero-projects-btn">Proyectos</a>
-                    <a href="cv/cv_es.pdf" download="Curriculum_Angel_Xavier.pdf" class="cv-btn" id="cv-download-btn"
-                        data-i18n="hero-cv-btn">Descargar CV</a>
+                    <a href="#proyectos" class="btn btn-primary" data-i18n="hero-projects-btn">Ver proyectos</a>
+                    <a href="cv/cv_es.pdf" download="Curriculum_Angel_Xavier.pdf" class="btn btn-ghost"
+                        id="cv-download-btn" data-i18n="hero-cv-btn">Descargar CV</a>
                 </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+                <span class="dots dots-a"></span>
+                <span class="dots dots-b"></span>
+                <div class="portrait"><img src="img/foto_portrait.webp" alt=""></div>
+                <span class="code-chip chip-a">node · express</span>
+                <span class="code-chip chip-b">postgres · docker</span>
+            </div>
+
+            <div class="hero-facts">
+                <dl class="facts">
+                    <div>
+                        <dt data-i18n="fact-focus">Enfoque</dt>
+                        <dd data-i18n="fact-focus-v">APIs REST, multi-tenant, seguridad</dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="fact-stack">Stack principal</dt>
+                        <dd>Node.js · TypeScript · PostgreSQL · Docker</dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="fact-edu">Formación</dt>
+                        <dd data-i18n="fact-edu-v">DAM · Especialización IA y Big Data (en curso)</dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="fact-lang">Idiomas</dt>
+                        <dd data-i18n="fact-lang-v">Español nativo · Francés C1 · Inglés B2</dd>
+                    </div>
+                </dl>
             </div>
         </section>
 
-        <section id="perfil">
-            <h2 class="section-title" data-i18n="section-profile">01/ Perfil</h2>
-            <div class="about-content">
-                <div class="about-text" data-i18n-html="about-text">
-                    Especializado en <em>backend</em>, con dominio del <em>stack completo</em>. Construyo sistemas
-                    robustos y escalables — desde la arquitectura hasta la interfaz.
-                </div>
-                <p class="about-detail" data-i18n="about-detail">
-                    Aprendizaje autodidacta constante y obsesión por dominar las herramientas antes de que sean
-                    tendencia. Mi formación en Contabilidad y Finanzas me da una perspectiva de negocio que aplico
-                    directamente en el software que construyo — porque un buen sistema no solo funciona, también tiene
-                    sentido económico.
-                </p>
-            </div>
-        </section>
-
-        <section id="stack">
-            <h2 class="section-title">02/ Tech Stack</h2>
-            <div class="stack-grid">
-                <div class="stack-category">
-                    <span class="stack-cat-title">Frontend</span>
-                    <div class="stack-badges">
-                        <span class="tech-badge"><iconify-icon icon="logos:html-5" width="16"
-                                height="16"></iconify-icon> HTML</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:css-3" width="16" height="16"></iconify-icon>
-                            CSS</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:tailwindcss-icon" width="16"
-                                height="16"></iconify-icon> Tailwind</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:bootstrap" width="16"
-                                height="16"></iconify-icon> Bootstrap</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:vitejs" width="16"
-                                height="16"></iconify-icon> Vite</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:typescript-icon" width="16"
-                                height="16"></iconify-icon> TypeScript</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:javascript" width="16"
-                                height="16"></iconify-icon> JavaScript</span>
+        <!-- ============ SOBRE MÍ ============ -->
+        <section id="sobre-mi">
+            <header class="section-head">
+                <span class="section-index">01</span>
+                <h2 class="section-title" data-i18n="section-about">Sobre mí</h2>
+            </header>
+            <div class="about-grid">
+                <div class="about-visual" aria-hidden="true">
+                    <span class="dots dots-c"></span>
+                    <div class="code-card">
+                        <div class="code-card-bar">
+                            <span></span><span></span><span></span>
+                            <em>about-me.ts</em>
+                        </div>
+<pre class="code-card-body"><code><span class="tk-k">const</span> <span class="tk-v">angel</span> = {
+  role: <span class="tk-s">'Fullstack Junior · Backend'</span>,
+  location: <span class="tk-s">'Valencia, España'</span>,
+  education: [<span class="tk-s">'DAM'</span>, <span class="tk-s">'IA y Big Data'</span>],
+  focus: [<span class="tk-s">'APIs REST'</span>, <span class="tk-s">'multi-tenant'</span>, <span class="tk-s">'seguridad'</span>],
+  background: <span class="tk-s">'Contabilidad y Finanzas'</span>,
+  openToWork: <span class="tk-k">true</span>,
+};</code></pre>
                     </div>
                 </div>
-                <div class="stack-category">
-                    <span class="stack-cat-title">Backend</span>
-                    <div class="stack-badges">
-                        <span class="tech-badge"><iconify-icon icon="logos:nodejs-icon" width="16"
-                                height="16"></iconify-icon> Node.js</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:php" width="16" height="16"></iconify-icon>
-                            PHP</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:nginx" width="16" height="16"></iconify-icon>
-                            Nginx</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:docker-icon" width="16"
-                                height="16"></iconify-icon> Docker</span>
-                        <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2.5">
-                                <rect x="3" y="11" width="18" height="11" rx="2" />
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                            </svg> BCrypt</span>
-                    </div>
-                </div>
-                <div class="stack-category">
-                    <span class="stack-cat-title">Databases</span>
-                    <div class="stack-badges">
-                        <span class="tech-badge"><iconify-icon icon="logos:mysql" width="16" height="16"></iconify-icon>
-                            MySQL</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:mongodb-icon" width="16"
-                                height="16"></iconify-icon> MongoDB</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:postgresql" width="16"
-                                height="16"></iconify-icon> PostgreSQL</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:sqlite" width="16"
-                                height="16"></iconify-icon> SQLite</span>
-                    </div>
-                </div>
-                <div class="stack-category">
-                    <span class="stack-cat-title">Languages</span>
-                    <div class="stack-badges">
-                        <span class="tech-badge"><iconify-icon icon="logos:java" width="16" height="16"></iconify-icon>
-                            Java</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:kotlin-icon" width="16"
-                                height="16"></iconify-icon> Kotlin</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:python" width="16"
-                                height="16"></iconify-icon> Python</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:c-plusplus" width="16"
-                                height="16"></iconify-icon> C++</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:bash-icon" width="16"
-                                height="16"></iconify-icon> Bash</span>
-                    </div>
-                </div>
-                <div class="stack-category">
-                    <span class="stack-cat-title">Others</span>
-                    <div class="stack-badges">
-                        <span class="tech-badge"><iconify-icon icon="logos:git-icon" width="16"
-                                height="16"></iconify-icon> Git</span>
-                        <span class="tech-badge"><iconify-icon icon="simple-icons:github" width="16" height="16"
-                                style="color:#fff"></iconify-icon> GitHub</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:gitlab" width="16"
-                                height="16"></iconify-icon> GitLab</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:visual-studio-code" width="16"
-                                height="16"></iconify-icon> VSCode</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:debian" width="16"
-                                height="16"></iconify-icon> Debian</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:ubuntu" width="16"
-                                height="16"></iconify-icon> Ubuntu</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:unity" width="16" height="16"></iconify-icon>
-                            Unity</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:android-studio" width="16"
-                                height="16"></iconify-icon> Android Studio</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:kubernetes" width="16"
-                                height="16"></iconify-icon> Kubernetes</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:anthropic" width="16"
-                                height="16"></iconify-icon> Claude Code</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:openai-icon" width="16"
-                                height="16"></iconify-icon> Codex</span>
+                <div class="about-text">
+                    <h3 class="about-name">Angel Xavier Pons Márquez</h3>
+                    <p data-i18n="about-p1">Soy desarrollador fullstack junior en Valencia, con el foco puesto en el
+                        backend. Terminé el ciclo de Desarrollo de Aplicaciones Multiplataforma con un proyecto final que
+                        hoy usan a diario dos negocios reales, y ahora curso la especialización en Inteligencia Artificial
+                        y Big Data.</p>
+                    <p data-i18n="about-p2">Antes de programar estudié Contabilidad y Finanzas y trabajé como asesor
+                        financiero, y eso se nota en cómo trabajo: primero entiendo cómo funciona el negocio —sus números y sus procesos— y después decido
+                        cómo tiene que ser el software. Un buen sistema no solo funciona; también tiene sentido
+                        económico.</p>
+                    <p data-i18n="about-p3">Aprendo de forma autodidacta y constante, y me gusta dominar una herramienta a
+                        fondo antes de llevarla a producción. Busco un equipo donde seguir creciendo como desarrollador
+                        backend o fullstack.</p>
+                    <div class="about-actions">
+                        <a href="#contacto" class="btn btn-primary btn-sm" data-i18n="about-cta">Hablemos</a>
+                        <a href="cv/cv_es.pdf" download="Curriculum_Angel_Xavier.pdf" class="btn btn-ghost btn-sm cv-link" data-i18n="hero-cv-btn">Descargar CV</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ============ PROYECTOS ============ -->
         <section id="proyectos">
-            <h2 class="section-title" data-i18n="section-projects">03/ Proyectos</h2>
-            <div class="project-content">
-                <div class="project-info">
-                    <div class="boutique-header">
-                        <h3 class="project-title"><em>Boutique Market ERP</em></h3>
-                    </div>
-                    <p data-i18n="boutique-desc">ERP multi-inquilino en producción para dos negocios familiares: Oh-Nails (salón) y El Gallo Azul (carnicería). Arquitectura fullstack desacoplada con Node.js + Express en Render, PostgreSQL en Supabase y frontend Vanilla JS en Vercel.</p>
-                    <div class="project-roles" style="margin: 1.25rem 0;">
-                        <div class="role-block">
-                            <span class="role-title" data-i18n="boutique-role-backend">Backend & Seguridad</span>
-                            <ul>
-                                <li data-i18n="boutique-b-1">Aislamiento multi-tenant con <code>AsyncLocalStorage</code>: el middleware inyecta el contexto de cada tenant en cada petición HTTP sin fuga de datos entre solicitudes concurrentes</li>
-                                <li data-i18n="boutique-b-2">Cifrado de datos sensibles con <code>AES-256-CBC</code> (IV único por registro), hashing con <code>bcrypt</code>, JWT para autenticación y <code>Helmet.js</code> contra XSS/clickjacking</li>
-                                <li data-i18n="boutique-b-3">Modelado relacional PostgreSQL con Supabase: control de concurrencia, queries optimizadas y lógica de negocio diferenciada por tenant</li>
-                            </ul>
-                        </div>
-                        <div class="role-block">
-                            <span class="role-title" data-i18n="boutique-role-features">Funcionalidades por Negocio</span>
-                            <ul>
-                                <li data-i18n="boutique-f-1"><strong>Oh-Nails:</strong> agenda de citas, seguimiento de clientes recurrentes y galería de trabajos</li>
-                                <li data-i18n="boutique-f-2"><strong>El Gallo Azul:</strong> gestión de inventario con alertas de stock crítico, proveedores y pedidos de compra</li>
-                                <li data-i18n="boutique-f-3">Módulo de estadísticas: ingresos vs. gastos en tiempo real, retención de clientes (flag de inactividad 30 días) y umbrales de stock</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
-                        <span class="tech-badge"><iconify-icon icon="logos:javascript" width="16" height="16"></iconify-icon> JavaScript</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:tailwindcss-icon" width="16" height="16"></iconify-icon> Tailwind</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:nodejs-icon" width="16" height="16"></iconify-icon> Node.js</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:express" width="16" height="16"></iconify-icon> Express</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:postgresql" width="16" height="16"></iconify-icon> PostgreSQL</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:supabase-icon" width="16" height="16"></iconify-icon> Supabase</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:vercel-icon" width="16" height="16" style="filter:invert(1)"></iconify-icon> Vercel</span>
-                        <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg> JWT + BCrypt</span>
-                        <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> AES-256</span>
-                    </div>
-                    <a href="https://github.com/Angel-dxd/boutique-market" target="_blank" rel="noopener noreferrer"
-                        class="project-link" data-i18n="boutique-link">Ver en Github →</a>
-                </div>
-                <div class="slider">
-                    <div class="slider-track">
-                        <img src="img/login.webp" alt="Login - Boutique Market ERP" class="slide">
-                        <img src="img/entrada-arelys.webp" alt="Dashboard Oh-Nails - Boutique Market ERP" class="slide">
-                        <img src="img/entrada-santi.webp" alt="Dashboard El Gallo Azul - Boutique Market ERP" class="slide">
-                    </div>
-                    <button class="slider-btn prev" onclick="moveSlide(-1)">&#8249;</button>
-                    <button class="slider-btn next" onclick="moveSlide(1)">&#8250;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" onclick="goToSlide(0)"></span>
-                        <span class="dot" onclick="goToSlide(1)"></span>
-                        <span class="dot" onclick="goToSlide(2)"></span>
-                    </div>
+            <header class="section-head">
+                <span class="section-index">02</span>
+                <h2 class="section-title" data-i18n="section-projects">Proyectos</h2>
+                <p class="section-lead" data-i18n="projects-lead">Pocos, pero reales: desplegados, con código publicado y pensados para resolver un problema concreto.</p>
+            </header>
 
+            <div class="projects-grid">
+                <!-- ---------- Boutique Market ---------- -->
+                <article class="project-card" id="boutique-market">
+                    <div class="project-media">
+                        <img src="img/boutique-ohnails.webp" alt="Panel de Oh-Nails en Boutique Market (modo demo con datos ficticios)" loading="lazy">
+                        <span class="project-badge" data-i18n="boutique-badge">En producción</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-kicker" data-i18n="boutique-kicker">Proyecto final DAM · Backend</p>
+                        <h3 class="project-title">Boutique Market</h3>
+                        <p class="project-desc" data-i18n="boutique-summary">Sistema de gestión multi-tenant que usan a diario dos negocios familiares reales —un salón de manicura y una pollería—, con una API en Node.js y una base de datos aislada para cada uno.</p>
+                        <ul class="project-tags">
+                            <li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>JWT</li><li>Docker</li>
+                        </ul>
+                        <details class="project-details">
+                            <summary data-i18n="details-summary">Detalles técnicos</summary>
+                            <ul class="list">
+                                <li data-i18n-html="boutique-d-1">Aislamiento multi-tenant con <code>AsyncLocalStorage</code>: el contexto de cada negocio viaja con la petición, sin fugas de datos entre peticiones.</li>
+                                <li data-i18n-html="boutique-d-2">Seguridad por capas: JWT, <code>bcrypt</code>, cifrado <code>AES-256</code>, <code>Helmet</code> y rate limiting.</li>
+                                <li data-i18n-html="boutique-d-3">44 endpoints REST documentados con Swagger, validación con <code>Zod</code>, tests con Jest + Supertest y entorno completo con Docker Compose.</li>
+                            </ul>
+                            <a href="https://boutique-market-api.onrender.com/api/docs/" target="_blank" rel="noopener noreferrer" class="details-link" data-i18n="link-api">Ver documentación de la API ↗</a>
+                        </details>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://boutique-market.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            <iconify-icon icon="lucide:eye" width="16" height="16"></iconify-icon> Demo
+                        </a>
+                        <a href="https://github.com/Angel-dxd/boutique-market" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                            <iconify-icon icon="simple-icons:github" width="15" height="15"></iconify-icon> Repo
+                        </a>
+                    </div>
+                </article>
+
+                <!-- ---------- DriveView (Aurion X Vision) ---------- -->
+                <article class="project-card" id="driveview">
+                    <div class="project-media">
+                        <img src="img/driveview-home.webp" alt="Portada de la tienda DriveView" loading="lazy">
+                        <span class="project-badge" data-i18n="dv-badge">Nueva versión</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-kicker" data-i18n="dv-kicker">E-commerce · Frontend</p>
+                        <h3 class="project-title">DriveView <span class="project-alias" data-i18n="dv-alias">antes Aurion X Vision</span></h3>
+                        <p class="project-desc" data-i18n="dv-summary">Tienda online de gafas de sol para conducir, con catálogo y filtros, configurador de receta óptica, carrito con cupones y checkout validado. Rediseñada por completo y disponible en español e inglés.</p>
+                        <ul class="project-tags">
+                            <li>React</li><li>TypeScript</li><li>Zustand</li><li>Zod</li><li>Playwright</li>
+                        </ul>
+                        <details class="project-details">
+                            <summary data-i18n="details-summary">Detalles técnicos</summary>
+                            <ul class="list">
+                                <li data-i18n-html="dv-d-1">Un componente de más de 600 líneas dividido en componentes atómicos, con carga diferida de rutas (<code>React.lazy</code>).</li>
+                                <li data-i18n-html="dv-d-2">Migración a TypeScript y estado global tipado con <code>Zustand</code>; formularios con React Hook Form + <code>Zod</code>.</li>
+                                <li data-i18n-html="dv-d-3">Tests con Vitest y Playwright, CI en GitHub Actions y despliegue en Netlify.</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://auronxvision.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            <iconify-icon icon="lucide:eye" width="16" height="16"></iconify-icon> Demo
+                        </a>
+                        <a href="https://github.com/Angel-dxd/monochrom-vision" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                            <iconify-icon icon="simple-icons:github" width="15" height="15"></iconify-icon> Repo
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- ============ STACK ============ -->
+        <section id="stack">
+            <header class="section-head">
+                <span class="section-index">03</span>
+                <h2 class="section-title" data-i18n="section-stack">Stack técnico</h2>
+                <p class="section-lead" data-i18n="stack-lead">Las herramientas que uso en proyectos reales.</p>
+            </header>
+            <div class="stack-grid">
+                <div class="stack-col">
+                    <h3 class="stack-title">Backend</h3>
+                    <ul class="pills pills-strong">
+                        <li>Node.js</li><li>Express</li><li>TypeScript</li><li>REST · OpenAPI</li><li>JWT · bcrypt</li>
+                    </ul>
+                </div>
+                <div class="stack-col">
+                    <h3 class="stack-title" data-i18n="stack-data">Bases de datos</h3>
+                    <ul class="pills pills-strong">
+                        <li>PostgreSQL</li><li>Supabase</li><li>MySQL</li><li>MongoDB</li>
+                    </ul>
+                </div>
+                <div class="stack-col">
+                    <h3 class="stack-title">DevOps</h3>
+                    <ul class="pills pills-strong">
+                        <li>Docker</li><li>Kubernetes</li><li>Helm</li><li>GitHub Actions</li><li>Linux</li>
+                    </ul>
+                </div>
+                <div class="stack-col">
+                    <h3 class="stack-title">Frontend & Testing</h3>
+                    <ul class="pills pills-strong">
+                        <li>React</li><li>JavaScript</li><li>Tailwind</li><li>Jest</li><li>Vitest</li><li>Playwright</li>
+                    </ul>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-card-header">
-                    <div class="project-title-group">
-                        <h3 class="project-title"><em>Contract Manager</em></h3>
-                        <span class="project-company">Onna Digital</span>
-                    </div>
-                    <span class="tag-badge" data-i18n="contract-badge">Prácticas</span>
-                </div>
-                <div class="project-card-body">
-                    <div class="project-card-desc">
-                        <p data-i18n="contract-desc">Aplicación web de gestión de contratos y recursos cloud
-                            desarrollada durante las prácticas en Onna Digital. Sistema con doble rol que integra
-                            directamente con Dolibarr como ERP central.</p>
-                        <div class="project-roles">
-                            <div class="role-block">
-                                <span class="role-title">Admin</span>
-                                <ul>
-                                    <li data-i18n="role-admin-1">Gestión de pods, Helm charts y clústeres Kubernetes vía
-                                        FreeLens</li>
-                                    <li data-i18n="role-admin-2">CRUD completo de clientes, contratos y productos</li>
-                                </ul>
-                            </div>
-                            <div class="role-block">
-                                <span class="role-title" data-i18n="role-client">Cliente</span>
-                                <ul>
-                                    <li data-i18n="role-client-1">Listado de contratos y clientes propios</li>
-                                    <li data-i18n="role-client-2">Crear, editar y eliminar contratos y productos</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card-stack">
-                        <span class="tech-badge"><iconify-icon icon="logos:typescript-icon" width="16"
-                                height="16"></iconify-icon> TypeScript</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:tailwindcss-icon" width="16"
-                                height="16"></iconify-icon> Tailwind</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:docker-icon" width="16"
-                                height="16"></iconify-icon> Docker</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:kubernetes" width="16"
-                                height="16"></iconify-icon> Kubernetes</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:gitlab" width="16"
-                                height="16"></iconify-icon> GitLab</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:dolibarr" width="16"
-                                height="16"></iconify-icon> Dolibarr API</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:helm" width="16" height="16"></iconify-icon>
-                            Helm</span>
-                        <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <circle cx="11" cy="11" r="8" />
-                                <path d="m21 21-4.35-4.35" />
-                            </svg> FreeLens</span>
-                    </div>
-                </div>
+            <div class="stack-learning">
+                <span class="learning-label" data-i18n="stack-learning">Aprendiendo ahora</span>
+                <ul class="pills">
+                    <li>Python</li><li>Machine Learning</li><li>Big Data</li><li data-i18n="stack-learning-ai">IA aplicada</li>
+                </ul>
             </div>
-            <div class="project-card">
-                <div class="project-card-header">
-                    <div class="project-title-group">
-                        <h3 class="project-title"><em>StudyAI Pro</em></h3>
-                    </div>
-                </div>
-                <div class="project-card-body">
-                    <div class="project-card-desc">
-                        <p data-i18n="studyai-desc">Aplicación web que convierte cualquier PDF en un test de opción
-                            múltiple. La IA analiza el contenido y genera preguntas personalizadas según dificultad e
-                            idioma. Incluye historial de sesiones, puntuación y exportación de resultados en PDF.</p>
-                        <a href="https://studyai-pro.vercel.app/" target="_blank" rel="noopener noreferrer"
-                            class="live-btn" data-i18n="studyai-link">Ver en vivo →</a>
-                    </div>
-                    <div class="project-card-stack">
-                        <span class="tech-badge"><iconify-icon icon="logos:javascript" width="16"
-                                height="16"></iconify-icon> JavaScript</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:supabase-icon" width="16"
-                                height="16"></iconify-icon> Supabase</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:vercel-icon" width="16" height="16"
-                                style="filter:invert(1)"></iconify-icon> Vercel</span>
-                        <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg> PDF Parse</span>
-                        <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10" />
-                                <path d="M12 8v4l3 3" />
-                            </svg> jsPDF</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-card-header">
-                    <div class="project-title-group">
-                        <h3 class="project-title"><em>Aurion X Vision</em></h3>
-                    </div>
-                </div>
-                <div class="project-card-body">
-                    <div class="project-card-desc">
-                        <p data-i18n="aurion-desc">E-commerce de óptica oftálmica refactorizado de monolito a arquitectura modular: componentes atómicos React, migración híbrida a TypeScript, accesibilidad WCAG 2.1 AA y cobertura de tests unitarios/E2E al 100%.</p>
-                        <div class="project-roles">
-                            <div class="role-block">
-                                <span class="role-title" data-i18n="aurion-role-arch">Arquitectura & Modularización</span>
-                                <ul>
-                                    <li data-i18n="aurion-arch-1">God Component (600+ líneas) descompuesto en atómicos: <code>ProductCard</code>, <code>ProductDetailsModal</code>, <code>TechComparisonTable</code></li>
-                                    <li data-i18n="aurion-arch-2">Code Splitting con <code>React.lazy</code> + <code>Suspense</code> en rutas principales para reducir el bundle inicial</li>
-                                    <li data-i18n="aurion-arch-3"><code>PrescriptionDrawer</code> unificado con modo <code>add | edit</code>, eliminando duplicación total entre catálogo y carrito</li>
-                                </ul>
+            <p class="stack-also"><span data-i18n="stack-also">También he trabajado con:</span> Java, Kotlin, PHP, Nginx, Git / GitLab.</p>
+        </section>
+
+        <!-- ============ EXPERIENCIA ============ -->
+        <section id="experiencia">
+            <header class="section-head">
+                <span class="section-index">04</span>
+                <h2 class="section-title" data-i18n="section-experience">Experiencia y formación</h2>
+            </header>
+            <div class="exp-grid">
+                <div>
+                    <h3 class="exp-group" data-i18n="exp-group-work">Experiencia</h3>
+                    <ol class="timeline">
+                        <li class="timeline-item">
+                            <div class="timeline-meta">
+                                <span class="timeline-date" data-i18n="exp-2-date">Nov 2025 — Mar 2026</span>
+                                <span class="timeline-type" data-i18n="exp-type">Prácticas</span>
                             </div>
-                            <div class="role-block">
-                                <span class="role-title" data-i18n="aurion-role-ts">TypeScript & Estado</span>
-                                <ul>
-                                    <li data-i18n="aurion-ts-1">Migración híbrida TS: interfaces centrales <code>Gafa</code>, <code>Receta</code>, <code>CartItem</code> y <code>CartStore</code> en <code>src/types/index.ts</code></li>
-                                    <li data-i18n="aurion-ts-2">Store Zustand migrado a <code>.ts</code> con tipado estricto en transiciones de estado y persistencia en <code>localStorage</code></li>
-                                    <li data-i18n="aurion-ts-3">Constantes ópticas centralizadas (<code>OPT_ESFERAS</code>, <code>OPT_CILINDROS</code>, <code>RECETA_DEFAULT</code>) eliminando magic numbers</li>
-                                </ul>
+                            <h4 class="timeline-title">Onna Digital</h4>
+                            <p class="timeline-subtitle" data-i18n="exp-2-role">Desarrollador Fullstack — Contract Manager</p>
+                            <p class="timeline-desc" data-i18n="exp-2-desc">Aplicación de gestión de contratos y recursos
+                                cloud integrada con la API de Dolibarr como ERP central, con roles de administrador y
+                                cliente. Gestión de pods, Helm charts y clústeres de Kubernetes.</p>
+                            <ul class="pills pills-sm">
+                                <li>TypeScript</li><li>Docker</li><li>Kubernetes</li><li>Helm</li><li>GitLab</li><li>Dolibarr API</li>
+                            </ul>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-meta">
+                                <span class="timeline-date" data-i18n="exp-1-date">Feb — May 2025</span>
+                                <span class="timeline-type" data-i18n="exp-type">Prácticas</span>
                             </div>
-                            <div class="role-block">
-                                <span class="role-title" data-i18n="aurion-role-qa">A11y, Calidad & CI/CD</span>
-                                <ul>
-                                    <li data-i18n="aurion-qa-1">WCAG 2.1 AA: Focus Trap en modales, <code>aria-label</code> dinámicos y navegación semántica con <code>react-router-dom</code></li>
-                                    <li data-i18n="aurion-qa-2">Error Boundary global con UI de recuperación elegante + Vitest (unitarios) y Playwright (E2E) al 100%</li>
-                                    <li data-i18n="aurion-qa-3">Pipeline CI/CD en GitHub Actions para testing automático y build en cada push</li>
-                                </ul>
+                            <h4 class="timeline-title">La Fábrica de los Hobbies</h4>
+                            <p class="timeline-subtitle" data-i18n="exp-1-role">Desarrollador Web — Gestión de inventario</p>
+                            <ul class="pills pills-sm">
+                                <li>PHP</li><li>JavaScript</li><li>Figma</li><li>XAMPP</li>
+                            </ul>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2022 — 2023</span>
+                                <span class="timeline-type" data-i18n="exp-type-job">Empleo</span>
                             </div>
-                        </div>
-                        <a href="https://auronxvision.netlify.app/" target="_blank" rel="noopener noreferrer"
-                            class="live-btn" data-i18n="aurion-link">Ver en vivo →</a>
-                        <a href="https://github.com/Angel-dxd/monochrom-vision" target="_blank" rel="noopener noreferrer"
-                            class="project-link" style="margin-left: 1.5rem;" data-i18n="aurion-github">Ver en Github →</a>
-                    </div>
-                    <div class="project-card-stack">
-                        <span class="tech-badge"><iconify-icon icon="logos:react" width="16"
-                                height="16"></iconify-icon> React</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:typescript-icon" width="16"
-                                height="16"></iconify-icon> TypeScript</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:vitejs" width="16"
-                                height="16"></iconify-icon> Vite</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:javascript" width="16"
-                                height="16"></iconify-icon> JavaScript</span>
-                        <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-                                <polyline points="2 17 12 22 22 17"/>
-                                <polyline points="2 12 12 17 22 12"/>
-                            </svg> Zustand</span>
-                        <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2.5">
-                                <circle cx="18" cy="5" r="3" />
-                                <circle cx="6" cy="12" r="3" />
-                                <circle cx="18" cy="19" r="3" />
-                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-                            </svg> Zod</span>
-                        <span class="tech-badge"><svg class="badge-svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <path d="M9 11l3 3L22 4"/>
-                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-                            </svg> RHF</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:framer" width="16"
-                                height="16"></iconify-icon> Framer Motion</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:vitest" width="16"
-                                height="16"></iconify-icon> Vitest</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:playwright" width="16"
-                                height="16"></iconify-icon> Playwright</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:github-actions" width="16"
-                                height="16"></iconify-icon> GitHub Actions</span>
-                        <span class="tech-badge"><iconify-icon icon="logos:netlify-icon" width="16"
-                                height="16"></iconify-icon> Netlify</span>
-                    </div>
+                            <h4 class="timeline-title">Asesores &amp; Abogados</h4>
+                            <p class="timeline-subtitle" data-i18n="exp-0-role">Asesor Financiero</p>
+                            <p class="timeline-desc" data-i18n="exp-0-desc">Gestión de nóminas, seguros sociales y
+                                beneficios laborales. Automaticé informes financieros en hojas de cálculo: mi primer
+                                contacto con la lógica de negocio que hoy llevo al software.</p>
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <h3 class="exp-group" data-i18n="exp-group-edu">Formación</h3>
+                    <ol class="timeline">
+                        <li class="timeline-item current">
+                            <div class="timeline-meta">
+                                <span class="timeline-date" data-i18n="edu-3-date">2026 — Actualidad</span>
+                                <span class="timeline-type" data-i18n="edu-3-type">En curso</span>
+                            </div>
+                            <h4 class="timeline-title" data-i18n="edu-3-title">Curso de Especialización en Inteligencia Artificial y Big Data</h4>
+                            <p class="timeline-desc" data-i18n="edu-3-desc">Aprendizaje automático, procesamiento de grandes volúmenes de datos y su integración en aplicaciones reales.</p>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2024 — 2026</span>
+                            </div>
+                            <h4 class="timeline-title" data-i18n="edu-2-title">CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</h4>
+                            <p class="timeline-desc" data-i18n="edu-2-desc">CEAC Valencia · Proyecto final: Boutique Market, en producción.</p>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2020 — 2022</span>
+                            </div>
+                            <h4 class="timeline-title" data-i18n="edu-1-title">CFGS — Contabilidad y Finanzas</h4>
+                            <p class="timeline-desc" data-i18n="edu-1-desc">La base que me permite entender la lógica de negocio de lo que construyo.</p>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </section>
 
-        <section id="formacion">
-            <h2 class="section-title" data-i18n="section-education">04/ Formación & Experiencia</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-type" data-i18n="edu-type">Formación</span>
-                        <span class="timeline-title" data-i18n="edu-1-title">Grado Superior — Contabilidad y
-                            Finanzas</span>
-                        <span class="timeline-date">2020 — 2022</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-type" data-i18n="edu-type">Formación</span>
-                        <span class="timeline-title" data-i18n="edu-2-title">Desarrollo de Aplicaciones Multiplataforma
-                            (DAM)</span>
-                        <span class="timeline-date">2024 — 2026</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker accent"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-type practicas" data-i18n="exp-type">Prácticas</span>
-                        <span class="timeline-title">La Fábrica de los Hobbies</span>
-                        <span class="timeline-subtitle" data-i18n="exp-1-role">Desarrollador Web — Gestión de
-                            inventario</span>
-                        <span class="timeline-date" data-i18n="exp-1-date">Febrero — Mayo 2025</span>
-                        <div class="timeline-stack">
-                            <iconify-icon icon="logos:php" width="14" height="14"></iconify-icon>
-                            <iconify-icon icon="logos:javascript" width="14" height="14"></iconify-icon>
-                            <iconify-icon icon="logos:figma" width="14" height="14"></iconify-icon>
-                            <iconify-icon icon="logos:xampp" width="14" height="14"></iconify-icon>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker accent"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-type practicas" data-i18n="exp-type">Prácticas</span>
-                        <span class="timeline-title">Onna Digital</span>
-                        <span class="timeline-subtitle" data-i18n="exp-2-role">Desarrollador Fullstack — Contract
-                            Manager</span>
-                        <span class="timeline-date" data-i18n="exp-2-date">Noviembre 2025 — Marzo 2026</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- ============ CONTACTO ============ -->
         <section id="contacto">
-            <h2 class="section-title" data-i18n="section-contact">05/ Contacto</h2>
+            <header class="section-head">
+                <span class="section-index">05</span>
+                <h2 class="section-title" data-i18n="section-contact">Contacto</h2>
+            </header>
             <div class="contact-wrapper">
                 <div class="contact-intro">
-                    <p class="about-detail" data-i18n="contact-intro">¿Tienes un proyecto en mente o quieres que hablemos? Escríbeme directamente.</p>
+                    <p class="section-lead" data-i18n="contact-intro">¿Buscas un desarrollador backend o quieres hablar de
+                        un proyecto? Escríbeme y te respondo en menos de 24 horas.</p>
                     <div class="contact-links">
+                        <a href="mailto:angelxavierponsmarquez2018@gmail.com" class="contact-social">
+                            <iconify-icon icon="lucide:mail" width="16" height="16"></iconify-icon> angelxavierponsmarquez2018@gmail.com
+                        </a>
                         <a href="https://www.linkedin.com/in/angel-xavier-pons-marquez/" target="_blank" rel="noopener noreferrer" class="contact-social">
                             <iconify-icon icon="simple-icons:linkedin" width="16" height="16"></iconify-icon> LinkedIn
                         </a>
                         <a href="https://github.com/Angel-dxd" target="_blank" rel="noopener noreferrer" class="contact-social">
-                            <iconify-icon icon="simple-icons:github" width="16" height="16" style="color:#fff"></iconify-icon> GitHub
+                            <iconify-icon icon="simple-icons:github" width="16" height="16"></iconify-icon> GitHub
                         </a>
                     </div>
                 </div>
@@ -492,7 +388,9 @@
                         <label for="contact-message" data-i18n="contact-label-message">Mensaje</label>
                         <textarea id="contact-message" name="message" rows="5" data-i18n-placeholder="contact-placeholder-message" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-outline contact-submit" data-i18n="contact-btn">Enviar mensaje</button>
+                    <!-- Honeypot anti-spam: invisible para personas, los bots lo rellenan -->
+                    <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <button type="submit" class="btn btn-primary contact-submit" data-i18n="contact-btn">Enviar mensaje</button>
                     <p class="contact-feedback" id="contact-feedback" aria-live="polite"></p>
                 </form>
             </div>
@@ -502,69 +400,24 @@
     <footer>
         <p class="footer-left">Angel Xavier Pons Márquez © 2026</p>
         <div class="footer-right">
-            <a href="https://github.com/Angel-dxd" target="_blank">Github</a>
-            <a href="https://www.linkedin.com/in/angel-xavier-pons-marquez/" target="_blank">LinkedIn</a>
-            <a href="mailto:angelxavierponsmarquez@gmail.com">Email</a>
+            <a href="https://github.com/Angel-dxd" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/angel-xavier-pons-marquez/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:angelxavierponsmarquez2018@gmail.com">Email</a>
         </div>
     </footer>
 
     <script>
-        let currentSlide = 0;
-        const total = document.querySelectorAll('.slide').length;
-
-        function updateSlider() {
-            document.querySelector('.slider-track').style.transform = `translateX(-${currentSlide * 100}%)`;
-            document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-        }
-
-        function moveSlide(dir) {
-            currentSlide = (currentSlide + dir + total) % total;
-            updateSlider();
-        }
-
-        function goToSlide(index) {
-            currentSlide = index;
-            updateSlider();
-        }
-
-        // Cursor personalizado
-        const dot = document.querySelector('.cursor-dot');
-        const ring = document.querySelector('.cursor-ring');
-        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-
-        document.addEventListener('mousemove', e => {
-            mouseX = e.clientX; mouseY = e.clientY;
-            dot.style.left = mouseX + 'px';
-            dot.style.top = mouseY + 'px';
-        });
-
-        (function animateRing() {
-            ringX += (mouseX - ringX) * 0.12;
-            ringY += (mouseY - ringY) * 0.12;
-            ring.style.left = ringX + 'px';
-            ring.style.top = ringY + 'px';
-            requestAnimationFrame(animateRing);
-        })();
-
-        document.querySelectorAll('a, button').forEach(el => {
-            el.addEventListener('mouseenter', () => ring.classList.add('ring-hover'));
-            el.addEventListener('mouseleave', () => ring.classList.remove('ring-hover'));
-        });
-
         // Navbar activa
         const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('nav ul li a');
-
         const navObserver = new IntersectionObserver(entries => {
             entries.forEach(e => {
                 if (e.isIntersecting) {
-                    navLinks.forEach(l => l.classList.remove('active'));
+                    document.querySelectorAll('nav ul li a').forEach(l => l.classList.remove('active'));
                     const link = document.querySelector(`nav ul li a[href="#${e.target.id}"]`);
                     if (link) link.classList.add('active');
                 }
             });
         }, { rootMargin: '-40% 0px -50% 0px' });
-
         sections.forEach(s => navObserver.observe(s));
 
         // Botón volver arriba
@@ -577,126 +430,134 @@
         // Traducciones
         const i18n = {
             es: {
-                'nav-about': 'Sobre mí', 'nav-projects': 'Proyectos', 'nav-education': 'Formación',
-                'nav-contact': 'Contacto', 'nav-status': 'Disponible',
-                'hero-desc': 'Desarrollador especializado en backend con dominio del stack completo. Construyo sistemas robustos y escalables — desde la arquitectura hasta la interfaz. Con base en Contabilidad y Finanzas, el software que desarrollo tiene tanto calidad técnica como sentido de negocio.',
-                'hero-projects-btn': 'Proyectos', 'hero-cv-btn': 'Descargar CV',
-                'section-profile': '01/ Perfil',
-                'about-text': 'Especializado en <em>backend</em>, con dominio del <em>stack completo</em>. Construyo sistemas robustos y escalables — desde la arquitectura hasta la interfaz.',
-                'about-detail': 'Aprendizaje autodidacta constante y obsesión por dominar las herramientas antes de que sean tendencia. Mi formación en Contabilidad y Finanzas me da una perspectiva de negocio que aplico directamente en el software que construyo — porque un buen sistema no solo funciona, también tiene sentido económico.',
-                'exp-2-role': 'Desarrollador Fullstack — Contract Manager',
-                'section-projects': '03/ Proyectos',
-                'boutique-desc': 'ERP multi-inquilino en producción para dos negocios familiares: Oh-Nails (salón) y El Gallo Azul (carnicería). Arquitectura fullstack desacoplada con Node.js + Express en Render, PostgreSQL en Supabase y frontend Vanilla JS en Vercel.',
-                'boutique-role-backend': 'Backend & Seguridad',
-                'boutique-b-1': 'Aislamiento multi-tenant con AsyncLocalStorage: el middleware inyecta el contexto de cada tenant en cada petición HTTP sin fuga de datos entre solicitudes concurrentes.',
-                'boutique-b-2': 'Cifrado de datos sensibles con AES-256-CBC (IV único por registro), hashing con bcrypt, JWT para autenticación y Helmet.js contra XSS/clickjacking.',
-                'boutique-b-3': 'Modelado relacional PostgreSQL con Supabase: control de concurrencia, queries optimizadas y lógica de negocio diferenciada por tenant.',
-                'boutique-role-features': 'Funcionalidades por Negocio',
-                'boutique-f-1': 'Oh-Nails: agenda de citas, seguimiento de clientes recurrentes y galería de trabajos.',
-                'boutique-f-2': 'El Gallo Azul: gestión de inventario con alertas de stock crítico, proveedores y pedidos de compra.',
-                'boutique-f-3': 'Módulo de estadísticas: ingresos vs. gastos en tiempo real, retención de clientes (flag de inactividad 30 días) y umbrales de stock.',
-                'boutique-link': 'Ver en Github →',
-                'contract-badge': 'Prácticas',
-                'contract-desc': 'Aplicación web de gestión de contratos y recursos cloud desarrollada durante las prácticas en Onna Digital. Sistema con doble rol que integra directamente con Dolibarr como ERP central.',
-                'role-client': 'Cliente',
-                'role-admin-1': 'Gestión de pods, Helm charts y clústeres Kubernetes vía FreeLens',
-                'role-admin-2': 'CRUD completo de clientes, contratos y productos',
-                'role-client-1': 'Listado de contratos y clientes propios',
-                'role-client-2': 'Crear, editar y eliminar contratos y productos',
-                'studyai-link': 'Ver en vivo →',
-                'studyai-desc': 'Aplicación web que convierte cualquier PDF en un test de opción múltiple. La IA analiza el contenido y genera preguntas personalizadas según dificultad e idioma. Incluye historial de sesiones, puntuación y exportación de resultados en PDF.',
-                'aurion-link': 'Ver en vivo →',
-                'aurion-github': 'Ver en Github →',
-                'aurion-desc': 'E-commerce de óptica oftálmica refactorizado de monolito a arquitectura modular: componentes atómicos React, migración híbrida a TypeScript, accesibilidad WCAG 2.1 AA y cobertura de tests unitarios/E2E al 100%.',
-                'aurion-role-arch': 'Arquitectura & Modularización',
-                'aurion-arch-1': 'God Component (600+ líneas) descompuesto en atómicos: ProductCard, ProductDetailsModal, TechComparisonTable.',
-                'aurion-arch-2': 'Code Splitting con React.lazy + Suspense en rutas principales para reducir el bundle inicial.',
-                'aurion-arch-3': 'PrescriptionDrawer unificado con modo add | edit, eliminando duplicación entre catálogo y carrito.',
-                'aurion-role-ts': 'TypeScript & Estado',
-                'aurion-ts-1': 'Migración híbrida TS: interfaces centrales Gafa, Receta, CartItem y CartStore en src/types/index.ts.',
-                'aurion-ts-2': 'Store Zustand migrado a .ts con tipado estricto en transiciones de estado y persistencia en localStorage.',
-                'aurion-ts-3': 'Constantes ópticas centralizadas (OPT_ESFERAS, OPT_CILINDROS, RECETA_DEFAULT) eliminando magic numbers.',
-                'aurion-role-qa': 'A11y, Calidad & CI/CD',
-                'aurion-qa-1': 'WCAG 2.1 AA: Focus Trap en modales, aria-label dinámicos y navegación semántica con react-router-dom.',
-                'aurion-qa-2': 'Error Boundary global con UI de recuperación elegante + Vitest (unitarios) y Playwright (E2E) al 100%.',
-                'aurion-qa-3': 'Pipeline CI/CD en GitHub Actions para testing automático y build en cada push.',
-                'section-education': '04/ Formación & Experiencia',
-                'edu-type': 'Formación', 'exp-type': 'Prácticas',
-                'edu-1-title': 'Grado Superior — Contabilidad y Finanzas',
-                'edu-2-title': 'Desarrollo de Aplicaciones Multiplataforma (DAM)',
-                'exp-1-role': 'Desarrollador Web — Gestión de inventario',
-                'exp-1-date': 'Febrero — Mayo 2025', 'exp-2-date': 'Noviembre 2025 — Marzo 2026',
-                'section-contact': '05/ Contacto',
-                'contact-intro': '¿Tienes un proyecto en mente o quieres que hablemos? Escríbeme directamente.',
+                'skip-link': 'Saltar a proyectos',
+                'nav-projects': 'Proyectos', 'nav-stack': 'Stack', 'nav-experience': 'Experiencia', 'nav-contact': 'Contacto',
+                'hero-status': 'Disponible para trabajar · Valencia, España', 'hero-hello': 'Hola, soy',
+                'hero-role': 'Desarrollador Fullstack Junior, especializado en backend.',
+                'hero-desc': 'Diseño y construyo APIs y sistemas de gestión con Node.js, TypeScript y PostgreSQL, y los despliego con Docker y CI/CD. Tras terminar DAM, me estoy especializando en Inteligencia Artificial y Big Data, y mi base en Contabilidad y Finanzas me ayuda a entender el negocio antes de escribir la primera línea de código.',
+                'hero-projects-btn': 'Ver proyectos', 'hero-cv-btn': 'Descargar CV',
+                'hero-card-sub': 'Backend · Fullstack',
+                'fact-focus': 'Enfoque', 'fact-focus-v': 'APIs REST, multi-tenant, seguridad',
+                'fact-stack': 'Stack principal',
+                'fact-edu': 'Formación', 'fact-edu-v': 'DAM · Especialización IA y Big Data (en curso)',
+                'fact-lang': 'Idiomas', 'fact-lang-v': 'Español nativo · Francés C1 · Inglés B2',
+
+                'nav-about': 'Sobre mí', 'section-about': 'Sobre mí', 'about-cta': 'Hablemos',
+                'about-p1': 'Soy desarrollador fullstack junior en Valencia, con el foco puesto en el backend. Terminé el ciclo de Desarrollo de Aplicaciones Multiplataforma con un proyecto final que hoy usan a diario dos negocios reales, y ahora curso la especialización en Inteligencia Artificial y Big Data.',
+                'about-p2': 'Antes de programar estudié Contabilidad y Finanzas y trabajé como asesor financiero, y eso se nota en cómo trabajo: primero entiendo cómo funciona el negocio —sus números y sus procesos— y después decido cómo tiene que ser el software. Un buen sistema no solo funciona; también tiene sentido económico.',
+                'about-p3': 'Aprendo de forma autodidacta y constante, y me gusta dominar una herramienta a fondo antes de llevarla a producción. Busco un equipo donde seguir creciendo como desarrollador backend o fullstack.',
+                'section-projects': 'Proyectos',
+                'projects-lead': 'Pocos, pero reales: desplegados, con código publicado y pensados para resolver un problema concreto.',
+                'details-summary': 'Detalles técnicos', 'link-api': 'Ver documentación de la API ↗',
+                'boutique-badge': 'En producción', 'boutique-kicker': 'Proyecto final DAM · Backend',
+                'boutique-summary': 'Sistema de gestión multi-tenant que usan a diario dos negocios familiares reales —un salón de manicura y una pollería—, con una API en Node.js y una base de datos aislada para cada uno.',
+                'boutique-d-1': 'Aislamiento multi-tenant con <code>AsyncLocalStorage</code>: el contexto de cada negocio viaja con la petición, sin fugas de datos entre peticiones.',
+                'boutique-d-2': 'Seguridad por capas: JWT, <code>bcrypt</code>, cifrado <code>AES-256</code>, <code>Helmet</code> y rate limiting.',
+                'boutique-d-3': '44 endpoints REST documentados con Swagger, validación con <code>Zod</code>, tests con Jest + Supertest y entorno completo con Docker Compose.',
+                'dv-badge': 'Nueva versión', 'dv-kicker': 'E-commerce · Frontend', 'dv-alias': 'antes Aurion X Vision',
+                'dv-summary': 'Tienda online de gafas de sol para conducir, con catálogo y filtros, configurador de receta óptica, carrito con cupones y checkout validado. Rediseñada por completo y disponible en español e inglés.',
+                'dv-d-1': 'Un componente de más de 600 líneas dividido en componentes atómicos, con carga diferida de rutas (<code>React.lazy</code>).',
+                'dv-d-2': 'Migración a TypeScript y estado global tipado con <code>Zustand</code>; formularios con React Hook Form + <code>Zod</code>.',
+                'dv-d-3': 'Tests con Vitest y Playwright, CI en GitHub Actions y despliegue en Netlify.',
+
+                'section-stack': 'Stack técnico', 'stack-lead': 'Las herramientas que uso en proyectos reales.',
+                'stack-data': 'Bases de datos', 'stack-also': 'También he trabajado con:',
+                'stack-learning': 'Aprendiendo ahora', 'stack-learning-ai': 'IA aplicada',
+
+                'section-experience': 'Experiencia y formación',
+                'exp-group-work': 'Experiencia', 'exp-group-edu': 'Formación', 'exp-type': 'Prácticas',
+                'exp-2-date': 'Nov 2025 — Mar 2026', 'exp-2-role': 'Desarrollador Fullstack — Contract Manager',
+                'exp-2-desc': 'Aplicación de gestión de contratos y recursos cloud integrada con la API de Dolibarr como ERP central, con roles de administrador y cliente. Gestión de pods, Helm charts y clústeres de Kubernetes.',
+                'exp-1-date': 'Feb — May 2025', 'exp-1-role': 'Desarrollador Web — Gestión de inventario',
+                'exp-type-job': 'Empleo', 'exp-0-role': 'Asesor Financiero',
+                'exp-0-desc': 'Gestión de nóminas, seguros sociales y beneficios laborales. Automaticé informes financieros en hojas de cálculo: mi primer contacto con la lógica de negocio que hoy llevo al software.',
+                'edu-3-date': '2026 — Actualidad', 'edu-3-type': 'En curso',
+                'edu-3-title': 'Curso de Especialización en Inteligencia Artificial y Big Data',
+                'edu-3-desc': 'Aprendizaje automático, procesamiento de grandes volúmenes de datos y su integración en aplicaciones reales.',
+                'edu-2-title': 'CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)',
+                'edu-2-desc': 'CEAC Valencia · Proyecto final: Boutique Market, en producción.',
+                'edu-1-title': 'CFGS — Contabilidad y Finanzas',
+                'edu-1-desc': 'La base que me permite entender la lógica de negocio de lo que construyo.',
+
+                'section-contact': 'Contacto',
+                'contact-intro': '¿Buscas un desarrollador backend o quieres hablar de un proyecto? Escríbeme y te respondo en menos de 24 horas.',
                 'contact-label-name': 'Nombre', 'contact-label-email': 'Email', 'contact-label-message': 'Mensaje',
                 'contact-placeholder-name': 'Tu nombre', 'contact-placeholder-message': 'Cuéntame sobre tu proyecto...',
                 'contact-btn': 'Enviar mensaje', 'contact-success': '¡Mensaje enviado! Te responderé pronto.',
+                'contact-sending': 'Enviando...', 'contact-required': 'Rellena todos los campos.',
+                'contact-invalid-email': 'Introduce un email válido.',
+                'contact-error': 'No se pudo enviar. Escríbeme a angelxavierponsmarquez2018@gmail.com',
             },
             en: {
-                'nav-about': 'About me', 'nav-projects': 'Projects', 'nav-education': 'Education',
-                'nav-contact': 'Contact', 'nav-status': 'Available',
-                'hero-desc': "Backend-specialized developer with full-stack command. I build robust and scalable systems — from architecture to interface. With a background in Accounting & Finance, the software I develop has both technical quality and business sense.",
-                'hero-projects-btn': 'Projects', 'hero-cv-btn': 'Download CV',
-                'section-profile': '01/ Profile',
-                'about-text': 'Specialized in <em>backend</em>, with command of the <em>full stack</em>. I build robust and scalable systems — from architecture to interface.',
-                'about-detail': 'Constant self-driven learning and an obsession with mastering tools before they become mainstream. My background in Accounting & Finance gives me a business perspective I apply directly to the software I build — because a good system not only works, it makes economic sense.',
-                'exp-2-role': 'Fullstack Developer — Contract Manager',
-                'section-projects': '03/ Projects',
-                'boutique-desc': 'Multi-tenant ERP in production for two family businesses: Oh-Nails (salon) and El Gallo Azul (butcher shop). Decoupled fullstack architecture with Node.js + Express on Render, PostgreSQL on Supabase and Vanilla JS frontend on Vercel.',
-                'boutique-role-backend': 'Backend & Security',
-                'boutique-b-1': 'Multi-tenant isolation via AsyncLocalStorage: middleware injects tenant context into every HTTP request with no data leakage between concurrent requests.',
-                'boutique-b-2': 'Sensitive data encrypted with AES-256-CBC (unique IV per record), bcrypt password hashing, JWT authentication and Helmet.js against XSS/clickjacking.',
-                'boutique-b-3': 'Relational PostgreSQL modeling on Supabase: concurrency control, optimized queries and tenant-specific business logic.',
-                'boutique-role-features': 'Per-Business Features',
-                'boutique-f-1': 'Oh-Nails: appointment scheduling, recurring client tracking and work portfolio gallery.',
-                'boutique-f-2': 'El Gallo Azul: inventory management with critical stock alerts, supplier management and purchase orders.',
-                'boutique-f-3': 'Statistics module: real-time revenue vs. expenses, customer retention (30-day inactivity flag) and stock threshold alerts.',
-                'boutique-link': 'View on Github →',
-                'contract-badge': 'Internship',
-                'contract-desc': 'Web application for contract and cloud resource management developed during an internship at Onna Digital. Dual-role system that integrates directly with Dolibarr as the central ERP.',
-                'role-client': 'Client',
-                'role-admin-1': 'Manage pods, Helm charts and Kubernetes clusters via FreeLens',
-                'role-admin-2': 'Full CRUD for clients, contracts and products',
-                'role-client-1': 'View own contracts and clients list',
-                'role-client-2': 'Create, edit and delete contracts and products',
-                'studyai-link': 'View live →',
-                'studyai-desc': 'Web app that turns any PDF into a multiple-choice quiz. The AI analyzes the content and generates personalized questions by difficulty and language. Includes session history, scoring and PDF export of results.',
-                'aurion-link': 'View live →',
-                'aurion-github': 'View on Github →',
-                'aurion-desc': 'Ophthalmic e-commerce refactored from monolith to modular architecture: atomic React components, hybrid TypeScript migration, WCAG 2.1 AA accessibility, and 100% unit/E2E test coverage.',
-                'aurion-role-arch': 'Architecture & Modularization',
-                'aurion-arch-1': 'God Component (600+ lines) broken into atomics: ProductCard, ProductDetailsModal, TechComparisonTable.',
-                'aurion-arch-2': 'Code Splitting with React.lazy + Suspense on main routes to reduce initial bundle size.',
-                'aurion-arch-3': 'Unified PrescriptionDrawer with add | edit mode, eliminating full duplication between catalog and cart.',
-                'aurion-role-ts': 'TypeScript & State',
-                'aurion-ts-1': 'Hybrid TS migration: core interfaces Gafa, Receta, CartItem and CartStore in src/types/index.ts.',
-                'aurion-ts-2': 'Zustand store migrated to .ts with strict typing on state transitions and localStorage persistence.',
-                'aurion-ts-3': 'Centralized optical constants (OPT_ESFERAS, OPT_CILINDROS, RECETA_DEFAULT) removing magic numbers.',
-                'aurion-role-qa': 'A11y, Quality & CI/CD',
-                'aurion-qa-1': 'WCAG 2.1 AA: Focus Trap in modals, dynamic aria-labels and semantic navigation via react-router-dom.',
-                'aurion-qa-2': 'Global Error Boundary with elegant recovery UI + Vitest (unit) and Playwright (E2E) at 100%.',
-                'aurion-qa-3': 'CI/CD pipeline on GitHub Actions for automated testing and build on every push.',
-                'section-education': '04/ Education & Experience',
-                'edu-type': 'Education', 'exp-type': 'Internship',
+                'skip-link': 'Skip to projects',
+                'nav-projects': 'Projects', 'nav-stack': 'Stack', 'nav-experience': 'Experience', 'nav-contact': 'Contact',
+                'hero-status': 'Open to work · Valencia, Spain', 'hero-hello': 'Hi, I am',
+                'hero-role': 'Junior Fullstack Developer, specialized in backend.',
+                'hero-desc': 'I design and build APIs and management systems with Node.js, TypeScript and PostgreSQL, and ship them with Docker and CI/CD. After finishing my degree in Multiplatform App Development, I am now specializing in Artificial Intelligence and Big Data, and my background in Accounting & Finance helps me understand the business before writing the first line of code.',
+                'hero-projects-btn': 'View projects', 'hero-cv-btn': 'Download CV',
+                'hero-card-sub': 'Backend · Fullstack',
+                'fact-focus': 'Focus', 'fact-focus-v': 'REST APIs, multi-tenancy, security',
+                'fact-stack': 'Main stack',
+                'fact-edu': 'Education', 'fact-edu-v': 'App Development · AI & Big Data specialization (ongoing)',
+                'fact-lang': 'Languages', 'fact-lang-v': 'Spanish (native) · French C1 · English B2',
+
+                'nav-about': 'About', 'section-about': 'About me', 'about-cta': "Let's talk",
+                'about-p1': "I'm a junior fullstack developer based in Valencia, focused on the backend. I finished my degree in Multiplatform Application Development with a final project that two real businesses now use every day, and I'm currently taking the specialization in Artificial Intelligence and Big Data.",
+                'about-p2': 'Before programming I studied Accounting & Finance and worked as a financial advisor, and it shows in how I work: first I understand how the business runs —its numbers and its processes— and then I decide what the software should look like. A good system does not just work; it also makes economic sense.',
+                'about-p3': 'I learn in a self-driven, consistent way, and I like to master a tool in depth before taking it to production. I am looking for a team where I can keep growing as a backend or fullstack developer.',
+                'section-projects': 'Projects',
+                'projects-lead': 'Few, but real: deployed, with published code and built to solve a concrete problem.',
+                'details-summary': 'Technical details', 'link-api': 'View API documentation ↗',
+                'boutique-badge': 'In production', 'boutique-kicker': 'Final degree project · Backend',
+                'boutique-summary': 'Multi-tenant management system used daily by two real family businesses —a nail salon and a poultry shop—, with a Node.js API and an isolated database for each one.',
+                'boutique-d-1': 'Multi-tenant isolation with <code>AsyncLocalStorage</code>: each business context travels with the request, with no data leakage between requests.',
+                'boutique-d-2': 'Layered security: JWT, <code>bcrypt</code>, <code>AES-256</code> encryption, <code>Helmet</code> and rate limiting.',
+                'boutique-d-3': '44 REST endpoints documented with Swagger, validation with <code>Zod</code>, tests with Jest + Supertest and a full Docker Compose environment.',
+                'dv-badge': 'New version', 'dv-kicker': 'E-commerce · Frontend', 'dv-alias': 'formerly Aurion X Vision',
+                'dv-summary': 'Online store for driving sunglasses, with catalog and filters, prescription configurator, cart with coupons and validated checkout. Fully redesigned and available in Spanish and English.',
+                'dv-d-1': 'A 600+ line component split into atomic components, with lazy-loaded routes (<code>React.lazy</code>).',
+                'dv-d-2': 'TypeScript migration and typed global state with <code>Zustand</code>; forms with React Hook Form + <code>Zod</code>.',
+                'dv-d-3': 'Tests with Vitest and Playwright, CI on GitHub Actions and deployment on Netlify.',
+
+                'section-stack': 'Tech stack', 'stack-lead': 'The tools I use in real projects.',
+                'stack-data': 'Databases', 'stack-also': 'I have also worked with:',
+                'stack-learning': 'Currently learning', 'stack-learning-ai': 'Applied AI',
+
+                'section-experience': 'Experience & education',
+                'exp-group-work': 'Experience', 'exp-group-edu': 'Education', 'exp-type': 'Internship',
+                'exp-2-date': 'Nov 2025 — Mar 2026', 'exp-2-role': 'Fullstack Developer — Contract Manager',
+                'exp-2-desc': 'Contract and cloud resource management app integrated with the Dolibarr API as the central ERP, with admin and client roles. Management of pods, Helm charts and Kubernetes clusters.',
+                'exp-1-date': 'Feb — May 2025', 'exp-1-role': 'Web Developer — Inventory management',
+                'exp-type-job': 'Employment', 'exp-0-role': 'Financial Advisor',
+                'exp-0-desc': 'Payroll, social security and employee benefits management. I automated financial reports in spreadsheets: my first contact with the business logic I now bring to software.',
+                'edu-3-date': '2026 — Present', 'edu-3-type': 'Ongoing',
+                'edu-3-title': 'Specialization Course in Artificial Intelligence and Big Data',
+                'edu-3-desc': 'Machine learning, large-scale data processing and how to integrate them into real applications.',
+                'edu-2-title': 'Higher Degree in Multiplatform Application Development (DAM)',
+                'edu-2-desc': 'CEAC Valencia · Final project: Boutique Market, in production.',
                 'edu-1-title': 'Higher Degree — Accounting & Finance',
-                'edu-2-title': 'Multiplatform Application Development (DAM)',
-                'exp-1-role': 'Web Developer — Inventory management',
-                'exp-1-date': 'February — May 2025', 'exp-2-date': 'November 2025 — March 2026',
-                'section-contact': '05/ Contact',
-                'contact-intro': 'Have a project in mind or want to talk? Write to me directly.',
+                'edu-1-desc': 'The foundation that lets me understand the business logic behind what I build.',
+
+                'section-contact': 'Contact',
+                'contact-intro': 'Looking for a backend developer or want to talk about a project? Write to me and I\'ll reply within 24 hours.',
                 'contact-label-name': 'Name', 'contact-label-email': 'Email', 'contact-label-message': 'Message',
                 'contact-placeholder-name': 'Your name', 'contact-placeholder-message': 'Tell me about your project...',
                 'contact-btn': 'Send message', 'contact-success': 'Message sent! I\'ll get back to you soon.',
+                'contact-sending': 'Sending...', 'contact-required': 'Please fill in all fields.',
+                'contact-invalid-email': 'Please enter a valid email.',
+                'contact-error': 'Could not send. Email me at angelxavierponsmarquez2018@gmail.com',
             }
         };
 
-        let currentLang = localStorage.getItem('lang') || 'es';
+        let currentLang = 'es';
+        try { currentLang = localStorage.getItem('lang') === 'en' ? 'en' : 'es'; } catch (e) {}
 
         function setLang(lang) {
             currentLang = lang;
-            localStorage.setItem('lang', lang);
-            document.querySelector('.lang-toggle').textContent = lang === 'es' ? 'EN' : 'ES';
-            document.querySelector('.lang-toggle').setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a Español');
+            try { localStorage.setItem('lang', lang); } catch (e) {}
+            const toggle = document.querySelector('.lang-toggle');
+            toggle.textContent = lang === 'es' ? 'EN' : 'ES';
+            toggle.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a Español');
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (i18n[lang][key] !== undefined) el.textContent = i18n[lang][key];
@@ -709,51 +570,30 @@
                 const key = el.getAttribute('data-i18n-placeholder');
                 if (i18n[lang][key] !== undefined) el.placeholder = i18n[lang][key];
             });
-            typingEl.textContent = typingTexts[lang];
             document.documentElement.lang = lang;
             const cvBtn = document.getElementById('cv-download-btn');
             if (cvBtn) { cvBtn.href = `cv/cv_${lang}.pdf`; cvBtn.download = 'Curriculum_Angel_Xavier.pdf'; }
-
-            if (typeof typeTimeout !== 'undefined') clearTimeout(typeTimeout);
-            ti = 0;
-            if (typingEl) typingEl.textContent = '';
-            setTimeout(type, 100);
+            document.querySelectorAll('.cv-link').forEach(a => { a.href = `cv/cv_${lang}.pdf`; });
         }
 
         function toggleLang() { setLang(currentLang === 'es' ? 'en' : 'es'); }
-
-        // Efecto typing
-        const typingEl = document.querySelector('.typing-target');
-        const typingTexts = { es: 'Desarrollador Junior Fullstack', en: 'Junior Fullstack Developer' };
-        let ti = 0;
-        let typeTimeout;
-
-        function type() {
-            const text = typingTexts[currentLang];
-            if (ti <= text.length) {
-                typingEl.textContent = text.slice(0, ti);
-                ti++;
-                typeTimeout = setTimeout(type, 80);
-            }
-        }
-        setTimeout(type, 800);
+        if (currentLang !== 'es') setLang(currentLang);
 
         // Fade-in on scroll
-        document.querySelectorAll('section > *, .project-content, .project-card, .timeline, .stack-grid').forEach((el, i) => {
-            el.classList.add('fade-in');
-            el.style.transitionDelay = `${(i % 4) * 0.1}s`;
-        });
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    observer.unobserve(e.target);
-                }
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('visible');
+                        observer.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.08 });
+            document.querySelectorAll('.section-head, .about-grid, .project-card, .stack-grid, .exp-grid, .contact-wrapper').forEach(el => {
+                el.classList.add('fade-in');
+                observer.observe(el);
             });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
 
         // Hamburger menu
         function toggleMenu() {
@@ -765,19 +605,60 @@
             document.querySelector('.hamburger').classList.remove('active');
         }
 
-        // Contact form
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
+        // Contact form — Web3Forms (https://web3forms.com). Sin clave, usa mailto como respaldo.
+        const WEB3FORMS_KEY = '';
+        const CONTACT_EMAIL = 'angelxavierponsmarquez2018@gmail.com';
+
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
             e.preventDefault();
+            const form = this;
+            const feedback = document.getElementById('contact-feedback');
+            const submitBtn = form.querySelector('.contact-submit');
             const name = document.getElementById('contact-name').value.trim();
             const email = document.getElementById('contact-email').value.trim();
             const message = document.getElementById('contact-message').value.trim();
-            if (!name || !email || !message) return;
-            const subject = encodeURIComponent(`Contacto desde portafolio — ${name}`);
-            const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\n${message}`);
-            window.location.href = `mailto:angelxavierponsmarquez2018@gmail.com?subject=${subject}&body=${body}`;
-            const feedback = document.getElementById('contact-feedback');
-            feedback.textContent = i18n[currentLang]['contact-success'];
-            setTimeout(() => { feedback.textContent = ''; }, 5000);
+            const t = i18n[currentLang];
+
+            feedback.classList.remove('error');
+            if (!name || !email || !message) {
+                feedback.textContent = t['contact-required'];
+                feedback.classList.add('error');
+                return;
+            }
+            if (!document.getElementById('contact-email').checkValidity()) {
+                feedback.textContent = t['contact-invalid-email'];
+                feedback.classList.add('error');
+                return;
+            }
+            if (form.botcheck.checked) return;
+
+            const subject = `Contacto desde portafolio — ${name}`;
+
+            if (!WEB3FORMS_KEY) {
+                const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\n${message}`);
+                window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${body}`;
+                return;
+            }
+
+            submitBtn.disabled = true;
+            feedback.textContent = t['contact-sending'];
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                    body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject, from_name: name, name, email, message })
+                });
+                const data = await res.json();
+                if (!data.success) throw new Error(data.message);
+                feedback.textContent = t['contact-success'];
+                form.reset();
+                setTimeout(() => { feedback.textContent = ''; }, 6000);
+            } catch (err) {
+                feedback.textContent = t['contact-error'];
+                feedback.classList.add('error');
+            } finally {
+                submitBtn.disabled = false;
+            }
         });
     </script>
 </body>

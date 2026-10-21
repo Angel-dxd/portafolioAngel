@@ -23,15 +23,16 @@ PHOTO   = os.path.join(_BASE, "..", "img", "foto_clean.png")
 # Using standard ReportLab Helvetica font
 
 # ── Colors ─────────────────────────────────────────────────────────────────
-NAVY    = HexColor("#0d1f35")
-SIDEBAR = HexColor("#091729")
-ACCENT  = HexColor("#3b82f6")
+NAVY    = HexColor("#1f2024")
+SIDEBAR = HexColor("#18191c")
+ACCENT_HEX = "#c9a26b"
+ACCENT  = HexColor(ACCENT_HEX)
 LIGHT   = HexColor("#e2e8f0")
 MUTED   = HexColor("#94a3b8")
 DARK    = HexColor("#475569")
 WHITE   = HexColor("#ffffff")
-PILL_BG = HexColor("#1e3a5f")
-SEP     = HexColor("#1e3555")
+PILL_BG = HexColor("#2e2f35")
+SEP     = HexColor("#34353b")
 
 # ── Layout ─────────────────────────────────────────────────────────────────
 W, H    = A4
@@ -145,11 +146,12 @@ CONTENT = {
         sec_exp    = "Experiencia",
         sec_proj   = "Proyectos",
         sec_edu    = "Educación",
-        about      = ("Desarrollador fullstack recién graduado en DAM, especializado en "
-                      "<b>backend</b>. Experiencia real en producción con Node.js, TypeScript, "
-                      "Docker y Kubernetes. Formación en Contabilidad y Finanzas que me permite "
-                      "construir software con visión de negocio. "
-                      '<font color="#3b82f6"><b>Disponible de inmediato.</b></font>'),
+        about      = ("Desarrollador fullstack graduado en DAM, especializado en <b>backend</b> y "
+                      "cursando la especialización en <b>Inteligencia Artificial y Big Data</b>. "
+                      "Proyecto en producción para dos negocios reales con Node.js y PostgreSQL, y "
+                      "experiencia en empresa con Docker y Kubernetes. Formación y experiencia en "
+                      "Contabilidad y Finanzas: construyo software con visión de negocio. "
+                      f'<font color="{ACCENT_HEX}"><b>Disponible de inmediato.</b></font>'),
         available  = "Disponible de inmediato",
         license    = "Carnet de conducir · Vehículo propio",
         internship = "Prácticas",
@@ -193,13 +195,14 @@ CONTENT = {
         ],
         projects = [
             dict(
-                name  = "Boutique Market ERP",
-                link  = "github.com/Angel-dxd/boutique-market",
-                url   = "https://github.com/Angel-dxd/boutique-market",
-                desc  = ("ERP <b>multitenant</b> desplegado en producción para dos negocios. "
-                         "Backend Node.js + Express en Render, <b>PostgreSQL</b> en Supabase y "
-                         "frontend en Vercel. Aislamiento por tenant con JWT y AES-256-CBC."),
-                stack = ["Node.js","JavaScript","PostgreSQL","Supabase","BCrypt","Tailwind"],
+                name  = "Boutique Market",
+                link  = "boutique-market.vercel.app",
+                url   = "https://boutique-market.vercel.app",
+                desc  = ("Sistema de gestión <b>multitenant</b> en producción para dos negocios: "
+                         "API Node.js + Express con una base de datos <b>PostgreSQL</b> por tenant, "
+                         "JWT, AES-256-CBC y rate limiting. 44 endpoints con Swagger, entorno "
+                         "<b>Docker</b> y CI en GitHub Actions. Demo pública con datos ficticios."),
+                stack = ["Node.js","Express","PostgreSQL","Docker","JWT","Jest","GitHub Actions"],
             ),
             dict(
                 name  = "Contract Manager",
@@ -210,16 +213,18 @@ CONTENT = {
                 stack = ["TypeScript","Docker","Kubernetes","Helm","GitLab CI"],
             ),
             dict(
-                name  = "StudyAI Pro",
-                link  = "studyai-pro.vercel.app",
-                url   = "https://studyai-pro.vercel.app",
-                desc  = ("App web que convierte cualquier PDF en un test de opción múltiple. "
-                         "La IA genera preguntas personalizadas por dificultad e idioma. "
-                         "Historial de sesiones, puntuación y exportación de resultados en PDF."),
-                stack = ["JavaScript","Supabase","Vercel","jsPDF"],
+                name  = "DriveView",
+                link  = "github.com/Angel-dxd/monochrom-vision",
+                url   = "https://github.com/Angel-dxd/monochrom-vision",
+                desc  = ("E-commerce de gafas para conducir refactorizado de monolito a componentes: "
+                         "<b>React + TypeScript</b>, estado con Zustand, checkout validado con Zod, "
+                         "contenido bilingüe y tests con Vitest y Playwright en CI."),
+                stack = ["React","TypeScript","Zustand","Zod","Playwright","Netlify"],
             ),
         ],
         edu = [
+            ("2026 – Actualidad", "Especialización en IA y Big Data",
+             "Curso de Especialización · En curso"),
             ("2024 – 2026", "Grado Superior DAM",
              "Desarrollo de Aplicaciones Multiplataforma · CEAC Valencia"),
             ("2022 – 2024", "Grado Superior Contabilidad y Finanzas",
@@ -238,11 +243,13 @@ CONTENT = {
         sec_exp    = "Experience",
         sec_proj   = "Projects",
         sec_edu    = "Education",
-        about      = ("Fullstack developer freshly graduated in Multiplatform Application "
-                      "Development, specializing in <b>backend</b>. Real production experience "
-                      "with Node.js, TypeScript, Docker and Kubernetes. Background in Accounting "
-                      "&amp; Finance gives me a business perspective applied directly to software. "
-                      '<font color="#3b82f6"><b>Available immediately.</b></font>'),
+        about      = ("Fullstack developer graduated in Multiplatform Application Development, "
+                      "specialized in <b>backend</b> and currently taking the <b>Artificial "
+                      "Intelligence &amp; Big Data</b> specialization. A production project for two "
+                      "real businesses with Node.js and PostgreSQL, plus company experience with "
+                      "Docker and Kubernetes. Accounting &amp; Finance background: I build software "
+                      "with business sense. "
+                      f'<font color="{ACCENT_HEX}"><b>Available immediately.</b></font>'),
         available  = "Available immediately",
         license    = "Driver's license · Own vehicle",
         internship = "Internship",
@@ -286,13 +293,14 @@ CONTENT = {
         ],
         projects = [
             dict(
-                name  = "Boutique Market ERP",
-                link  = "github.com/Angel-dxd/boutique-market",
-                url   = "https://github.com/Angel-dxd/boutique-market",
-                desc  = ("Multi-tenant ERP deployed in production for two businesses. "
-                         "Node.js + Express backend on Render, <b>PostgreSQL</b> on Supabase, "
-                         "frontend on Vercel. Per-tenant isolation with JWT and AES-256-CBC."),
-                stack = ["Node.js","JavaScript","PostgreSQL","Supabase","BCrypt","Tailwind"],
+                name  = "Boutique Market",
+                link  = "boutique-market.vercel.app",
+                url   = "https://boutique-market.vercel.app",
+                desc  = ("<b>Multi-tenant</b> management system in production for two businesses: "
+                         "Node.js + Express API with one <b>PostgreSQL</b> database per tenant, JWT, "
+                         "AES-256-CBC and rate limiting. 44 endpoints with Swagger, <b>Docker</b> "
+                         "environment and CI on GitHub Actions. Public demo with fictional data."),
+                stack = ["Node.js","Express","PostgreSQL","Docker","JWT","Jest","GitHub Actions"],
             ),
             dict(
                 name  = "Contract Manager",
@@ -303,16 +311,18 @@ CONTENT = {
                 stack = ["TypeScript","Docker","Kubernetes","Helm","GitLab CI"],
             ),
             dict(
-                name  = "StudyAI Pro",
-                link  = "studyai-pro.vercel.app",
-                url   = "https://studyai-pro.vercel.app",
-                desc  = ("Web app that turns any PDF into a multiple-choice quiz. "
-                         "AI generates personalized questions by difficulty and language. "
-                         "Session history, scoring and PDF export of results."),
-                stack = ["JavaScript","Supabase","Vercel","jsPDF"],
+                name  = "DriveView",
+                link  = "github.com/Angel-dxd/monochrom-vision",
+                url   = "https://github.com/Angel-dxd/monochrom-vision",
+                desc  = ("Driving-sunglasses e-commerce refactored from a monolith into components: "
+                         "<b>React + TypeScript</b>, Zustand state, Zod-validated checkout, bilingual "
+                         "content and Vitest + Playwright tests in CI."),
+                stack = ["React","TypeScript","Zustand","Zod","Playwright","Netlify"],
             ),
         ],
         edu = [
+            ("2026 – Present", "AI & Big Data Specialization",
+             "Specialization Course · Ongoing"),
             ("2024 – 2026", "Higher Degree — DAM",
              "Multiplatform Application Development · CEAC Valencia"),
             ("2022 – 2024", "Higher Degree — Accounting & Finance",
@@ -324,21 +334,21 @@ CONTENT = {
 
 SKILL_GROUPS = {
     "es": [
-        ("Frontend",    ["HTML","CSS","JS","TypeScript","Tailwind","Bootstrap"]),
-        ("Backend",     ["Node.js","PHP","Nginx"]),
-        ("Mobile / JVM",["Java","Kotlin","Android Studio","Python","C++"]),
-        ("DevOps",      ["Docker","Kubernetes","Helm","GitLab CI"]),
-        ("Databases",   ["MySQL","MongoDB","PostgreSQL"]),
-        ("S. Operativos",["Debian","Ubuntu","Linux"]),
+        ("Backend",     ["Node.js","Express","TypeScript","PHP","REST · OpenAPI"]),
+        ("Bases de datos",["PostgreSQL","MySQL","MongoDB"]),
+        ("DevOps",      ["Docker","Kubernetes","Helm","GitHub Actions","GitLab CI"]),
+        ("Frontend",    ["React","JavaScript","Tailwind","HTML","CSS"]),
+        ("IA y datos (en curso)",["Python","Machine Learning","Big Data"]),
+        ("Otros",       ["Java","Kotlin","Linux"]),
         ("Tools",       ["Git","GitHub","VSCode","Figma","FreeLens"]),
     ],
     "en": [
-        ("Frontend",    ["HTML","CSS","JS","TypeScript","Tailwind","Bootstrap"]),
-        ("Backend",     ["Node.js","PHP","Nginx"]),
-        ("Mobile / JVM",["Java","Kotlin","Android Studio","Python","C++"]),
-        ("DevOps",      ["Docker","Kubernetes","Helm","GitLab CI"]),
-        ("Databases",   ["MySQL","MongoDB","PostgreSQL"]),
-        ("OS",          ["Debian","Ubuntu","Linux"]),
+        ("Backend",     ["Node.js","Express","TypeScript","PHP","REST · OpenAPI"]),
+        ("Databases",   ["PostgreSQL","MySQL","MongoDB"]),
+        ("DevOps",      ["Docker","Kubernetes","Helm","GitHub Actions","GitLab CI"]),
+        ("Frontend",    ["React","JavaScript","Tailwind","HTML","CSS"]),
+        ("AI & data (ongoing)",["Python","Machine Learning","Big Data"]),
+        ("Other",       ["Java","Kotlin","Linux"]),
         ("Tools",       ["Git","GitHub","VSCode","Figma","FreeLens"]),
     ],
 }
@@ -376,10 +386,10 @@ def build(lang, output):
         ("in","linkedin/angel-xavier-\npons-marquez"),
         ("GH","github.com/Angel-dxd"),
         ("✆","+34 640 105 492"),
-        ("◎","Valencia, España"),
+        ("»","Valencia, España"),
     ]:
         story.append(Paragraph(
-            f'<font color="#3b82f6"><b>{icon}</b></font>  '
+            f'<font color="{ACCENT_HEX}"><b>{icon}</b></font>  '
             + text.replace('\n','<br/>&nbsp;&nbsp;&nbsp;&nbsp;'), sCONT))
         story.append(Spacer(1, 1.5*mm))
 
@@ -411,7 +421,7 @@ def build(lang, output):
 
     story += sec(c["sec_exp"])
     for job in c["jobs"]:
-        badge = (f'  <font color="#3b82f6">[{job["badge"]}]</font>'
+        badge = (f'  <font color="{ACCENT_HEX}">[{job["badge"]}]</font>'
                  if job["badge"] else "")
         story.append(Paragraph(
             f'<b>{job["role"]}</b>'
@@ -432,7 +442,7 @@ def build(lang, output):
         else:
             link_part = f'<font color="#475569">{p["link"]}</font>'
         story.append(Paragraph(
-            f'<b><font color="#3b82f6">{p["name"]}</font></b>'
+            f'<b><font color="{ACCENT_HEX}">{p["name"]}</font></b>'
             f'  —  {link_part}', sPROJ))
         story.append(Paragraph(p["desc"], sBODY))
         story.append(Spacer(1, 1.5*mm))
@@ -442,7 +452,7 @@ def build(lang, output):
     story += sec(c["sec_edu"])
     for date, title, sub in c["edu"]:
         story.append(Paragraph(
-            f'<font color="#3b82f6"><b>{date}</b></font>'
+            f'<font color="{ACCENT_HEX}"><b>{date}</b></font>'
             f'  <b><font color="#ffffff">{title}</font></b>', sJOB))
         story.append(Paragraph(sub, sMUTED))
         story.append(Spacer(1, 3*mm))

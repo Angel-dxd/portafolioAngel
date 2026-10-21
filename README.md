@@ -1,29 +1,38 @@
 # Portafolio · Angel Xavier Pons Márquez
 
-> Desarrollador Junior Fullstack — especializado en backend.
-> Valencia, España · 2026
+> Desarrollador Fullstack Junior, especializado en backend · Especialización en IA y Big Data (en curso)
+> Valencia, España
 
-🌐 **Live:** [angel-dxd.github.io/portafolioAngel](https://angel-dxd.github.io/portafolioAngel/)
+🌐 **Web:** [angel-dxd.github.io/portafolioAngel](https://angel-dxd.github.io/portafolioAngel/)
+
+![Vista previa del portafolio](img/og-image.png)
 
 ---
 
 ## 📌 Sobre el proyecto
 
-Portafolio personal estático construido con **HTML + CSS + JavaScript vanilla**, sin frameworks pesados. Optimizado para rendimiento, SEO y accesibilidad, con soporte multi-idioma (ES/EN), modo claro/oscuro adaptativo y animaciones nativas.
-
-El sitio reúne mi perfil profesional, stack técnico, proyectos destacados, formación y CV descargable en ambos idiomas.
+Portafolio personal estático construido con **HTML, CSS y JavaScript sin frameworks**, desplegado en GitHub Pages. Reúne mi perfil, mis proyectos, mi stack, mi experiencia y un formulario de contacto, en español e inglés.
 
 ---
 
-## 🛠 Stack
+## 🚀 Proyectos destacados
 
-| Categoría | Tecnologías |
-|-----------|-------------|
-| **Frontend** | HTML5, CSS3, JavaScript (ES6+), Iconify |
-| **Diseño** | CSS Grid, Flexbox, Custom Properties, animaciones CSS |
-| **Hosting** | GitHub Pages |
-| **CV** | Generación automática vía Python (`cv/generate_cv.py`) |
-| **i18n** | Sistema propio de traducción ES/EN basado en `data-i18n` |
+| Proyecto | Descripción | Stack | Enlaces |
+|---|---|---|---|
+| **Boutique Market** | Sistema de gestión multi-tenant en producción para dos negocios familiares, con una base de datos PostgreSQL por negocio. | Node.js · Express · PostgreSQL · JWT · Docker | [Demo](https://boutique-market.vercel.app) · [Código](https://github.com/Angel-dxd/boutique-market) |
+| **DriveView** | E-commerce de gafas para conducir con configurador de receta, carrito con cupones y checkout validado. | React · TypeScript · Zustand · Zod · Playwright | [Demo](https://auronxvision.netlify.app) · [Código](https://github.com/Angel-dxd/monochrom-vision) |
+
+---
+
+## ✨ Características
+
+- **Bilingüe ES / EN** con un sistema propio basado en atributos `data-i18n` y la preferencia guardada.
+- **Responsive**, con menú adaptado a móvil y sin scroll horizontal.
+- **Accesible**: HTML semántico, enlace para saltar al contenido, foco visible y respeto a `prefers-reduced-motion`.
+- **SEO y Open Graph** con imagen propia para compartir en redes.
+- **Formulario de contacto** con validación, protección anti-spam (*honeypot*) y envío mediante Web3Forms (con `mailto` como respaldo).
+- **CV bilingüe** generado automáticamente con Python.
+- **Sin dependencias de build**: se abre `index.html` y funciona.
 
 ---
 
@@ -31,76 +40,40 @@ El sitio reúne mi perfil profesional, stack técnico, proyectos destacados, for
 
 ```
 portafolioAngel/
-├── index.html          # Página principal (SPA estática)
-├── style.css           # Estilos completos
-├── favicon.svg         # Icono del sitio
+├── index.html        # Página principal y traducciones
+├── style.css         # Estilos (tokens de color, layout y responsive)
+├── favicon.svg
 ├── cv/
-│   ├── cv_es.pdf       # Currículum en español
-│   ├── cv_en.pdf       # Currículum en inglés
-│   └── generate_cv.py  # Script generador del CV
-└── img/                # Avatar y capturas de proyectos
+│   ├── generate_cv.py  # Generador de los CV en PDF (ES / EN)
+│   ├── cv_es.pdf
+│   └── cv_en.pdf
+└── img/              # Foto, capturas de proyectos e imagen Open Graph
 ```
 
 ---
 
-## ✨ Características
-
-- **Responsive** — diseño fluido desde móvil hasta 4K
-- **Bilingüe** — toggle ES/EN con persistencia
-- **Cursor personalizado** — efecto interactivo en escritorio
-- **Animaciones on-scroll** — IntersectionObserver para fade-in progresivo
-- **Typing effect** — rotación de roles en el hero
-- **Accesibilidad** — etiquetas ARIA, contraste AAA, navegación por teclado
-- **SEO + Open Graph** — metaetiquetas para compartir en redes
-- **Cero dependencias de build** — abre `index.html` y funciona
-
----
-
-## 🚀 Proyectos destacados
-
-| Proyecto | Descripción | Stack |
-|----------|-------------|-------|
-| **Boutique Market ERP** | Sistema de gestión empresarial completo con dashboard, autenticación y módulos de mercado | Node.js · TypeScript · MySQL · Docker |
-| **Onna Digital** | Colaboración profesional en proyectos digitales | Fullstack |
-| **StudyAI Pro** | Plataforma educativa con IA integrada | Web · IA |
-
----
-
-## 💻 Ejecutar localmente
+## 💻 Ejecutar en local
 
 ```bash
 git clone https://github.com/Angel-dxd/portafolioAngel.git
 cd portafolioAngel
-
-# Opción 1: abrir directamente
-open index.html
-
-# Opción 2: servidor local
-python3 -m http.server 8000
-# → http://localhost:8000
+python3 -m http.server 8000   # → http://localhost:8000
 ```
 
----
-
-## 📄 Generar CV
+## 📄 Regenerar el CV
 
 ```bash
-cd cv
-python3 generate_cv.py
+pip3 install reportlab pillow
+python3 cv/generate_cv.py
 ```
 
 ---
 
 ## 📬 Contacto
 
-- 🌐 **Web:** [angel-dxd.github.io/portafolioAngel](https://angel-dxd.github.io/portafolioAngel/)
-- 💼 **GitHub:** [@Angel-dxd](https://github.com/Angel-dxd)
-- 📧 **Email:** angelxavierponsmarquez2018@gmail.com
-- 📍 **Ubicación:** Valencia, España
+- 💼 [GitHub](https://github.com/Angel-dxd) · [LinkedIn](https://www.linkedin.com/in/angel-xavier-pons-marquez/)
+- 📧 angelxavierponsmarquez2018@gmail.com
 
 ---
 
-## 📝 Licencia
-
-© 2026 Angel Xavier Pons Márquez. Todos los derechos reservados.
-El código del portafolio es de uso personal; las imágenes y CV no pueden ser reutilizados sin permiso.
+© 2026 Angel Xavier Pons Márquez. El código del portafolio es de uso personal; las imágenes y el CV no pueden reutilizarse sin permiso.
